@@ -6,15 +6,21 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour {
     
-    public int sceneToLoad;
+    public int sceneToLoad; //NEEDS CHANGING
+
+    [Header("Game over")]
     public Text gameOverText;
+    bool gameIsOver = false;
+
+    [Header("Blink")]
     public Text cooldownBlinkText;
     public RawImage blinkActive;
+
+    [Header("Invisibility")]
     public Text cooldownInvisibilityText;
     public RawImage invisibilityActive;
 
-    bool gameIsOver = false;
-
+    //can bee reached from every class (only one game manager)
     public static Game instance;
 
     private void Awake()
@@ -26,12 +32,15 @@ public class Game : MonoBehaviour {
 
     private void Update()
     {
+        //changing scenes
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //DEV MODE (load next scene)
             if (Player.dev)
             {
                 LoadScene();
             }
+            //GAME OVER (load first scene)
             else if (gameIsOver)
             {
                 SceneManager.LoadScene(0);
@@ -46,6 +55,7 @@ public class Game : MonoBehaviour {
 
     void ShowGameOverUI()
     {
+        //WORK IN PROGRESS
         gameOverText.text = "Game Over";
         gameIsOver = true;
     }

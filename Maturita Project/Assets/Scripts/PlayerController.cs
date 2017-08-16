@@ -8,21 +8,23 @@ using UnityEngine.UI;
 [RequireComponent(typeof(LineRenderer))]
 public class PlayerController : MonoBehaviour {
 
+    [Header("Blink")]
     public LayerMask blinkObstacleMask;
     public GameObject blinkCube;
-
     public float blinkRange = 5f;
-
-
-    Rigidbody myRigidbody;
-    Vector3 velocity;
 
     LineRenderer lr;
     Color colorOfBlinkCube = new Color(0, 255, 255, .25f);
-    Color playerColor;
-
-    bool invisible = false;
     bool canBlink = true;
+
+    //invisibility
+    Color playerColor;
+    bool invisible = false;
+
+    //movement
+    Rigidbody myRigidbody;
+    Vector3 velocity;
+
 
     private void Awake()
     {
@@ -73,22 +75,25 @@ public class PlayerController : MonoBehaviour {
             blinkCube.transform.position = lr.GetPosition(1);
             blinkCube.transform.rotation = transform.rotation;
 
-            //max distance of blink
-            if (Player.dev) // DEV MOD
+            // DEV MODE
+            if (Player.dev)
             {
                 blinkCube.transform.position = lr.GetPosition(1);
                 if (Input.GetMouseButtonDown(0))
                 {
                     transform.position = blinkCube.transform.position;
                 }
-            }
+            } 
+            // NORMAL MODE
             else
             {
+                //blink range
                 if (Vector3.Distance(blinkCube.transform.position, transform.position) > blinkRange)
                 {
                     lr.SetPosition(1, (blinkCube.transform.position - transform.position).normalized * blinkRange + transform.position);
                     blinkCube.transform.position = lr.GetPosition(1);
                 }
+
                 //collision
                 RaycastHit hit;
                 float maxDistOfColDetection = Vector3.Distance(transform.position, blinkCube.transform.position);
@@ -97,17 +102,20 @@ public class PlayerController : MonoBehaviour {
                     lr.SetPosition(1, hit.point);
                     blinkCube.transform.position = hit.point;
                 }
-                //blink to position
+
                 if (Input.GetMouseButtonDown(0) && canBlink)
                 {
+                    //blink to position
                     transform.position = blinkCube.transform.position;
+
+                    //change of color on cooldown
                     GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
-                    //cooldown + change of color
-                    canBlink = false;
                     blinkCube.GetComponent<Renderer>().sharedMaterial.color = new Color(80, 80, 80, .25f);
+                    canBlink = false;
 
                     for (int i = 0; i < cooldown; i++)
                     {
+                        //cooldown
                         Game.instance.cooldownBlinkText.text = cooldown - i + "";
                         yield return new WaitForSeconds(1);
                     }
@@ -127,9 +135,12 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator InvisibilityC(float cooldown)
     {
+        //initial setup
         blinkCube.SetActive(false);
         lr.startWidth = 0f;
-        if (Player.dev) // DEV MOD
+
+        // DEV MODE
+        if (Player.dev)
         {
             if (Input.GetMouseButtonDown(1)) invisible = !invisible;
 
@@ -144,24 +155,30 @@ public class PlayerController : MonoBehaviour {
             Player.isInvisible = invisible;
             yield return null;
         }
+        //NORMAL MODE
         else if (Input.GetMouseButtonDown(1) && !invisible)
         {
+            //change color to "invisible"
             invisible = true;
             GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 3f);
             Player.isInvisible = true;
 
+            //COOLDOWN
             for (int i = 0; i < cooldown; i++)
             {
+                //if visible show actual cooldown
                 if (GetComponent<Renderer>().material.color == playerColor)
                 {
                     Game.instance.cooldownInvisibilityText.text = cooldown - i + "";
                 }
                 else
                 {
+                    //show invisible time left
                     if (i < Mathf.FloorToInt(cooldown/2))
                     {
                         Game.instance.cooldownInvisibilityText.text = cooldown/2 - i + "";
                     }
+                    //invisible to visible
                     else if (i == Mathf.FloorToInt(cooldown/2))
                     {
                         Player.isInvisible = false;

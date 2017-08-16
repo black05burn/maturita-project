@@ -8,33 +8,35 @@ public class Player : MonoBehaviour {
 
     public static event System.Action PlayerHasEnteredFinish;
 
-    // DEV MOD
-    public bool devMod;
+    [Header("Developer mode")]
+    public bool devMode;
     public static bool dev;
 
-
+    [Header("Important values")]
     public float moveSpeed = 5f;
     public float blinkCooldown = 5f;
     public float invisibilityCooldown = 5f;
 
+    //auxiliary values
     public static bool isInvisible = false;
     bool blink = true;
     bool invisibility = false;
 
+    //input
     Camera viewCam;
     PlayerController controller;
     Vector3 point;
 
     private void Awake()
     {
-        dev = devMod; // DEV MOD
         viewCam = Camera.main;
         controller = GetComponent<PlayerController>();
     }
 
     private void Start()
     {
-        Guard.OnGuardHasSpottedPlayer += Die;
+        //DEV MODE
+        dev = devMode;
     }
 
     private void Update()
@@ -50,26 +52,26 @@ public class Player : MonoBehaviour {
         float rayDistance;
         if (groundPlane.Raycast(ray, out rayDistance))
         {
+            //look at mouse point
             point = ray.GetPoint(rayDistance);
-            //Debug.DrawRay(transform.position, point);
             controller.LookAt(point);
         }
 
         //POWERS
-        if (!dev)
+
+        //changing powers
+        if (Input.GetKeyDown("1"))
         {
-            if (Input.GetKeyDown("1"))
-            {
-                blink = true;
-                invisibility = false;
-            }
-            else if (Input.GetKeyDown("2"))
-            {
-                invisibility = true;
-                blink = false;
-            }
+            blink = true;
+            invisibility = false;
+        }
+        else if (Input.GetKeyDown("2"))
+        {
+            invisibility = true;
+            blink = false;
         }
 
+        //starting powers
         if (blink)
         {
             Game.instance.blinkActive.enabled = true;
@@ -84,6 +86,7 @@ public class Player : MonoBehaviour {
         }
     }
 
+    //FINISH
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Finish"))
@@ -94,15 +97,4 @@ public class Player : MonoBehaviour {
             }
         }
     }
-
-    void Die()
-    {
-        Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        Guard.OnGuardHasSpottedPlayer -= Die;
-    }
-
 }
