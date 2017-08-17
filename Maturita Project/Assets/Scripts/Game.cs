@@ -43,6 +43,7 @@ public class Game : MonoBehaviour {
             //GAME OVER (load first scene)
             else if (gameIsOver)
             {
+                Player.isInvisible = false;
                 SceneManager.LoadScene(0);
             }
         }
@@ -50,6 +51,7 @@ public class Game : MonoBehaviour {
 
     void LoadScene()
     {
+        Player.isInvisible = false;
         SceneManager.LoadScene(sceneToLoad);
     }
 

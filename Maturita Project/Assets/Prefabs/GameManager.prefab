@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4204242842509300}
   - component: {fileID: 114085118469558310}
+  - component: {fileID: 114122957615510646}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -245,12 +246,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c88879c990d804db125c409443a948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 1
+  sceneToLoad: 0
   gameOverText: {fileID: 114706399001171578}
   cooldownBlinkText: {fileID: 114601412271139306}
   blinkActive: {fileID: 114028216974687988}
   cooldownInvisibilityText: {fileID: 114935115449794366}
   invisibilityActive: {fileID: 114263818130906446}
+--- !u!114 &114122957615510646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550553479372132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62903638d72af544aba05b907a5aa34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114203614621119206
 MonoBehaviour:
   m_ObjectHideFlags: 1
