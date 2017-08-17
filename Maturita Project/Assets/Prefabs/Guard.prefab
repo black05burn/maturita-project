@@ -249,7 +249,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307371872021500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8525116, y: 1.8018061e-16, z: -8.114614}
+  m_LocalPosition: {x: 4.25, y: 1.8018061e-16, z: -6.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4375205340597296}
@@ -264,7 +264,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619127122442610}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.004, y: -0.049, z: 0.291}
+  m_LocalPosition: {x: -0.01, y: 0, z: 0.291}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4100485672304992}
@@ -498,15 +498,16 @@ MonoBehaviour:
   waitTime: 0.3
   turnSpeed: 90
   timeToSpotPlayer: 0.5
+  pathHolder: {fileID: 4892506777681830}
   spotLight: {fileID: 108384733320021080}
   viewDistance: 10
   viewMask:
     serializedVersion: 2
     m_Bits: 256
-  pathHolder: {fileID: 4892506777681830}
   bulletPrefab: {fileID: 1980718894500092, guid: 6961a697653409544bd127dc7349acce,
     type: 2}
   firePoint: {fileID: 4651327252929292}
+  shootSound: {fileID: 8300000, guid: 809f2e2128fdbb24789d2282a04e1b1a, type: 3}
 --- !u!136 &136139843299253488
 CapsuleCollider:
   m_ObjectHideFlags: 1

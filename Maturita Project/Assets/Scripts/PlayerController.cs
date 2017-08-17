@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public LayerMask blinkObstacleMask;
     public GameObject blinkCube;
     public float blinkRange = 5f;
+    public AudioClip blinkSound;
 
     LineRenderer lr;
     Color colorOfBlinkCube = new Color(0, 255, 255, .25f);
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     //blink to position
                     transform.position = blinkCube.transform.position;
-
+                    Audio.instance.PlaySound(blinkSound, transform.position);
                     //change of color on cooldown
                     GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
                     blinkCube.GetComponent<Renderer>().sharedMaterial.color = new Color(80, 80, 80, .25f);

@@ -22,9 +22,10 @@ public class Guard : MonoBehaviour
     private float playerVisibleTimer;
     private Color originalSpotlightColor;
 
-    [Header("Bullet")]
+    [Header("Shooting")]
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public AudioClip shootSound;
     bool shot = false;
 
     Transform player;
@@ -165,6 +166,7 @@ public class Guard : MonoBehaviour
 
         if (bullet != null)
         {
+            Audio.instance.PlaySound(shootSound, firePoint.position);
             bullet.Seek(player);
         }
     }
