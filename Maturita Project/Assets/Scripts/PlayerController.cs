@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
     Rigidbody myRigidbody;
     Vector3 velocity;
 
+    public GameObject playerHolder;
+    Animator anim;
 
     private void Awake()
     {
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour {
         lr = GetComponent<LineRenderer>();
         blinkCube.GetComponent<Renderer>().sharedMaterial.color = colorOfBlinkCube;
         playerColor = GetComponent<Renderer>().material.color;
-        //blinkCube = GameObject.FindGameObjectWithTag("BlinkCube");
+        anim = playerHolder.GetComponent<Animator>();
     }
 
     public void LookAt(Vector3 point)
@@ -51,6 +53,9 @@ public class PlayerController : MonoBehaviour {
     {
         myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
     }
+
+
+    // --== BLINK ==--
 
     public void Blink(Vector3 point, float cooldown)
     {
@@ -108,9 +113,13 @@ public class PlayerController : MonoBehaviour {
                 {
                     //blink to position
                     transform.position = blinkCube.transform.position;
-                    Audio.instance.PlaySound(blinkSound, transform.position);
-                    //change of color on cooldown
+                    //set player to visible
                     GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
+                    Player.isInvisible = false;
+                    //play audio and animation
+                    Audio.instance.PlaySound(blinkSound, transform.position);
+                    anim.Play("BlinkAnimation");
+                    //change of color on cooldown
                     blinkCube.GetComponent<Renderer>().sharedMaterial.color = new Color(80, 80, 80, .25f);
                     canBlink = false;
 
@@ -128,6 +137,8 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
+
+    // --== INVISIBILITY ==--
 
     public void Invisibility(float cooldown)
     { 
@@ -162,6 +173,7 @@ public class PlayerController : MonoBehaviour {
             //change color to "invisible"
             invisible = true;
             GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 3f);
+            GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             Player.isInvisible = true;
 
             //COOLDOWN
@@ -184,6 +196,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         Player.isInvisible = false;
                         GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
+                        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
                         Game.instance.cooldownInvisibilityText.text = cooldown / 2 + "";
                     }
                 }
