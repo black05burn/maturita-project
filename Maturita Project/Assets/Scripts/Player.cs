@@ -37,6 +37,8 @@ public class Player : MonoBehaviour {
     {
         //DEV MODE
         dev = devMode;
+        isInvisible = false;
+        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
     }
 
     private void Update()

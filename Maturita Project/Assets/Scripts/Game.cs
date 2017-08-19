@@ -43,9 +43,9 @@ public class Game : MonoBehaviour {
             //GAME OVER (load first scene)
             else if (gameIsOver)
             {
-                Player.isInvisible = false;
-                FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
                 SceneManager.LoadScene(0);
+                //Player.isInvisible = false;
+                //FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             }
         }
     }
@@ -53,6 +53,7 @@ public class Game : MonoBehaviour {
     void LoadScene()
     {
         Player.isInvisible = false;
+        FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         SceneManager.LoadScene(sceneToLoad);
     }
 
