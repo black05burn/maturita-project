@@ -1,13 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(LineRenderer))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
+    #region Variables
     [Header("Blink")]
     public LayerMask blinkObstacleMask;
     public GameObject blinkCube;
@@ -28,8 +28,10 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject playerHolder;
     Animator anim;
+	#endregion
 
-    private void Awake()
+	#region Unity Methods
+	private void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
@@ -38,7 +40,15 @@ public class PlayerController : MonoBehaviour {
         anim = playerHolder.GetComponent<Animator>();
     }
 
-    public void LookAt(Vector3 point)
+	//rigidbody uses fixedupdate
+	private void FixedUpdate()
+	{
+		myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
+	}
+
+	#endregion
+
+	public void LookAt(Vector3 point)
     {
         transform.LookAt(new Vector3(point.x, transform.position.y, point.z));
     }
@@ -48,21 +58,8 @@ public class PlayerController : MonoBehaviour {
         this.velocity = velocity;
     }
 
-    //rigidbody uses fixedupdate
-    private void FixedUpdate()
-    {
-        myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
-    }
-
-
-    // --== BLINK ==--
-
-    public void Blink(Vector3 point, float cooldown)
-    {
-        StartCoroutine(BlinkC(point, cooldown));
-    }
-
-    IEnumerator BlinkC(Vector3 point, float cooldown)
+    #region POWERS
+	public IEnumerator Blink(Vector3 point, float cooldown)
     {
         //hide line and blink cube
         blinkCube.SetActive(false);
@@ -138,14 +135,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // --== INVISIBILITY ==--
-
-    public void Invisibility(float cooldown)
-    { 
-        StartCoroutine(InvisibilityC(cooldown));
-    }
-
-    IEnumerator InvisibilityC(float cooldown)
+    public IEnumerator Invisibility(float cooldown)
     {
         //initial setup
         blinkCube.SetActive(false);
@@ -208,4 +198,5 @@ public class PlayerController : MonoBehaviour {
 
         }
     }
+    #endregion
 }

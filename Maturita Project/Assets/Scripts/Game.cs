@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Game : MonoBehaviour {
-    
-    public int sceneToLoad; //NEEDS CHANGING
+
+	#region Variables
+	public int sceneToLoad; //NEEDS CHANGING
 
     [Header("Game over")]
     public Text gameOverText;
@@ -22,12 +21,14 @@ public class Game : MonoBehaviour {
 
     //can bee reached from every class (only one game manager)
     public static Game instance;
+	#endregion
 
-    private void Awake()
+	#region Unity Methods
+	private void Awake()
     {
         instance = this;
-        Player.PlayerHasEnteredFinish += LoadScene;
-        Guard.OnGuardHasSpottedPlayer += ShowGameOverUI;
+        Player.PlayerHasEnteredFinish += LoadSceneOnLevelFinish;
+		Guard.OnGuardHasSpottedPlayer += ShowGameOverUI;
     }
 
     private void Update()
@@ -38,23 +39,28 @@ public class Game : MonoBehaviour {
             //DEV MODE (load next scene)
             if (Player.dev)
             {
-                LoadScene();
+                LoadSceneOnLevelFinish();
             }
             //GAME OVER (load first scene)
             else if (gameIsOver)
             {
                 SceneManager.LoadScene(0);
-                //Player.isInvisible = false;
-                //FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             }
         }
     }
 
-    void LoadScene()
+    private void OnDestroy()
     {
-        Player.isInvisible = false;
-        FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        SceneManager.LoadScene(sceneToLoad);
+        Guard.OnGuardHasSpottedPlayer -= ShowGameOverUI;
+		Player.PlayerHasEnteredFinish -= LoadSceneOnLevelFinish;
+    }
+
+	#endregion
+    void LoadSceneOnLevelFinish()
+    {
+		Player.isInvisible = false;
+		FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+		SceneManager.LoadScene(sceneToLoad);
     }
 
     void ShowGameOverUI()
@@ -64,9 +70,5 @@ public class Game : MonoBehaviour {
         gameIsOver = true;
     }
 
-    private void OnDestroy()
-    {
-        Guard.OnGuardHasSpottedPlayer -= ShowGameOverUI;
-    }
 
 }

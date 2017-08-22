@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Guard : MonoBehaviour
@@ -7,6 +6,7 @@ public class Guard : MonoBehaviour
     //event for other classes
     public static event System.Action OnGuardHasSpottedPlayer;
 
+    #region Variables
     [Header("Movement")]
     public float speed = 5f;
     public float waitTime = 0.3f;
@@ -30,7 +30,10 @@ public class Guard : MonoBehaviour
 
     Transform player;
 
-    private void Awake()
+	#endregion
+
+	#region Unity Methods
+	private void Awake()
     {
         originalSpotlightColor = spotLight.color;
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -92,7 +95,25 @@ public class Guard : MonoBehaviour
         }
     }
 
-    bool CanSeePlayer()
+	//Gizmos in inspector (debuging tools)
+	private void OnDrawGizmos()
+	{
+		Vector3 startPos = pathHolder.GetChild(0).position;
+		Vector3 prevPos = startPos;
+		foreach (Transform waypoint in pathHolder)
+		{
+			Gizmos.DrawSphere(waypoint.position, .3f);
+			Gizmos.DrawLine(prevPos, waypoint.position);
+			prevPos = waypoint.position;
+		}
+		Gizmos.DrawLine(prevPos, startPos);
+		Gizmos.color = Color.red;
+		Gizmos.DrawRay(transform.position, transform.forward * viewDistance);
+	}
+
+	#endregion
+
+	bool CanSeePlayer()
     {
         //player is alive and visible
         if (player != null && !Player.isInvisible)
@@ -171,19 +192,5 @@ public class Guard : MonoBehaviour
         }
     }
 
-    //Gizmos in inspector (debuging tools)
-    private void OnDrawGizmos()
-    {
-        Vector3 startPos = pathHolder.GetChild(0).position;
-        Vector3 prevPos = startPos;
-        foreach (Transform waypoint in pathHolder)
-        {
-            Gizmos.DrawSphere(waypoint.position, .3f);
-            Gizmos.DrawLine(prevPos, waypoint.position);
-            prevPos = waypoint.position;
-        }
-        Gizmos.DrawLine(prevPos, startPos);
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward * viewDistance);
-    }
+    
 }

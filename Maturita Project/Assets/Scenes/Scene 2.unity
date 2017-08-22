@@ -1226,6 +1226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5e54d415448747a99e10dbfdd103b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothSpeed: 8
+  offset: {x: 0, y: 30, z: 0}
 --- !u!1001 &2084199136
 Prefab:
   m_ObjectHideFlags: 0
