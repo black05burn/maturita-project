@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             blinkCube.transform.rotation = transform.rotation;
 
             // DEV MODE
-            if (Player.dev)
+            if (Game.dev)
             {
                 blinkCube.transform.position = lr.GetPosition(1);
                 if (Input.GetMouseButtonDown(0))
@@ -142,9 +142,9 @@ public class PlayerController : MonoBehaviour
         lr.startWidth = 0f;
 
         // DEV MODE
-        if (Player.dev)
+        if (Game.dev)
         {
-            if (Input.GetMouseButtonDown(1)) invisible = !invisible;
+			if (Input.GetMouseButtonDown(1)) invisible = !invisible;
 
             if (invisible)
             {
@@ -162,9 +162,9 @@ public class PlayerController : MonoBehaviour
         {
             //change color to "invisible"
             invisible = true;
+            Player.isInvisible = true;
             GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 3f);
             GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-            Player.isInvisible = true;
 
             //COOLDOWN
             for (int i = 0; i < cooldown; i++)
@@ -194,8 +194,7 @@ public class PlayerController : MonoBehaviour
             }
 
             Game.instance.cooldownInvisibilityText.text = "";
-            invisible = false;
-
+			invisible = false;
         }
     }
     #endregion

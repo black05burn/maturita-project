@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour {
 
 	#region Variables
-	public int sceneToLoad; //NEEDS CHANGING
+
 
     [Header("Game over")]
-    public Text gameOverText;
-    bool gameIsOver = false;
+	public GameObject gameOverUI;
+    //public Text gameOverText;
+    //bool gameIsOver = false;
 
     [Header("Blink")]
     public Text cooldownBlinkText;
@@ -21,35 +22,43 @@ public class Game : MonoBehaviour {
 
     //can bee reached from every class (only one game manager)
     public static Game instance;
+	//dev/cheat mode
+	public static bool dev = false;
 	#endregion
 
 	#region Unity Methods
 	private void Awake()
     {
-        instance = this;
         Player.PlayerHasEnteredFinish += LoadSceneOnLevelFinish;
 		Guard.OnGuardHasSpottedPlayer += ShowGameOverUI;
     }
 
-    private void Update()
-    {
-        //changing scenes
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //DEV MODE (load next scene)
-            if (Player.dev)
-            {
-                LoadSceneOnLevelFinish();
-            }
-            //GAME OVER (load first scene)
-            else if (gameIsOver)
-            {
-                SceneManager.LoadScene(0);
-            }
-        }
-    }
+	private void Start()
+	{
+		instance = this;
+	}
 
-    private void OnDestroy()
+	private void Update()
+	{
+		//changing scenes
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			//DEV MODE (load next scene)
+			if (dev)
+			{
+				LoadSceneOnLevelFinish();
+			}
+		}
+
+		//dev (cheat) mode activated/deactivated
+		if (Input.GetKeyDown(KeyCode.I) && Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.M))
+		{
+			dev = !dev;
+			print("devMode = " + dev);
+		}
+	}
+
+	private void OnDestroy()
     {
         Guard.OnGuardHasSpottedPlayer -= ShowGameOverUI;
 		Player.PlayerHasEnteredFinish -= LoadSceneOnLevelFinish;
@@ -58,16 +67,13 @@ public class Game : MonoBehaviour {
 	#endregion
     void LoadSceneOnLevelFinish()
     {
-		Player.isInvisible = false;
-		FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-		SceneManager.LoadScene(sceneToLoad);
+		//FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+		SceneManager.LoadScene(0);
     }
 
     void ShowGameOverUI()
     {
-        //WORK IN PROGRESS
-        gameOverText.text = "Game Over";
-        gameIsOver = true;
+		gameOverUI.SetActive(true);
     }
 
 

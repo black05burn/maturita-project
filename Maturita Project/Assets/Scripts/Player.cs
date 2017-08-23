@@ -7,20 +7,15 @@ public class Player : MonoBehaviour {
 	public static event System.Action PlayerHasEnteredFinish;
 
 	#region Variables
-	[Header("Developer mode")]
-	public bool devMode;
-	public static bool dev;
-
 	[Header("Important values")]
 	public float moveSpeed = 5f;
 	public float blinkCooldown = 5f;
 	public float invisibilityCooldown = 5f;
 
 	//auxiliary values
-	public static bool isInvisible = false;
+	public static bool isInvisible;
 	bool blink = true;
 	bool invisibility = false;
-	bool playerHasFoundAllKeys = false;
 
 	//input
 	Camera viewCam;
@@ -28,7 +23,8 @@ public class Player : MonoBehaviour {
 	Vector3 point;
 
 	[Space]
-	public List<GameObject> keysOnLevel;
+	public Transform keysHolder;
+	bool playerHasFoundAllKeys = false;
 	#endregion
 
 	#region Unity Methods
@@ -41,8 +37,6 @@ public class Player : MonoBehaviour {
 
 	private void Start()
 	{
-		//DEV MODE
-		dev = devMode;
 		isInvisible = false;
 		GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 	}
@@ -65,8 +59,7 @@ public class Player : MonoBehaviour {
 			controller.LookAt(point);
 		}
 
-
-		# region POWERS
+		#region POWERS
 
 		//changing powers
 		if (Input.GetKeyDown("1"))
@@ -93,7 +86,10 @@ public class Player : MonoBehaviour {
 			Game.instance.invisibilityActive.enabled = true;
 			StartCoroutine(controller.Invisibility(invisibilityCooldown));
 		}
+
 		#endregion
+
+		
 	}
 
 	//FINISH and KEY
@@ -117,26 +113,17 @@ public class Player : MonoBehaviour {
 
 		if (collision.collider.CompareTag("Key"))
 		{
-			collision.gameObject.SetActive(false);
+			print("There are " + (keysHolder.childCount - 1).ToString() + " keys left.");
+			Destroy(collision.gameObject);
 
-			if (keysOnLevel.Count > 0)
+			if (keysHolder.childCount - 1 == 0)
 			{
-				keysOnLevel.RemoveAt(keysOnLevel.Count - 1);
-				if (keysOnLevel.Count == 0)
-				{
-					playerHasFoundAllKeys = true;
-					GameObject.FindGameObjectWithTag("Finish").GetComponent<Renderer>().material.color = new Color(0, .5f, 0);
-				}
+				playerHasFoundAllKeys = true;
+				GameObject.FindGameObjectWithTag("Finish").GetComponent<Renderer>().material.color = new Color(0, .5f, 0);
+				print("playerHasFoundAllKeys = " + playerHasFoundAllKeys);
 			}
-
-
-			print("You have found the key");
 			//GAME UI needed here!!!
 		}
 	}
-
 	#endregion
-
-
-
 }
