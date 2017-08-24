@@ -92,7 +92,7 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	//FINISH and KEY
+	#region FINISH
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.collider.CompareTag("Finish"))
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-
+		//collect key (count number of keys on the map)
 		if (collision.collider.CompareTag("Key"))
 		{
 			print("There are " + (keysHolder.childCount - 1).ToString() + " keys left.");
@@ -125,5 +125,7 @@ public class Player : MonoBehaviour {
 			//GAME UI needed here!!!
 		}
 	}
+	#endregion
+
 	#endregion
 }

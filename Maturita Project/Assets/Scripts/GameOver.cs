@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+	#region Methods for Buttons
 	public void Retry()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -12,4 +13,5 @@ public class GameOver : MonoBehaviour
 	{
 		print("Open Menu");
 	}
+	#endregion
 }
