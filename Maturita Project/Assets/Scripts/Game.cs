@@ -76,5 +76,4 @@ public class Game : MonoBehaviour {
 		gameOverUI.SetActive(true);
     }
 
-
 }

@@ -31,6 +31,8 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 
+	#endregion
+
 	public void Retry()
 	{
 		Toggle();
@@ -39,8 +41,8 @@ public class PauseMenu : MonoBehaviour {
 
 	public void Menu()
 	{
-		print("Main Menu");
+		Toggle();
+		SceneManager.LoadScene(0);
 	}
 
-	#endregion
 }

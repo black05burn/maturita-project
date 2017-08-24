@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
 
 	public void Menu()
 	{
-		print("Open Menu");
+		SceneManager.LoadScene(0);
 	}
 	#endregion
 }
