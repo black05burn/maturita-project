@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
 	public float moveSpeed = 5f;
 	public float blinkCooldown = 5f;
 	public float invisibilityCooldown = 5f;
+	public float invisibilityDuration = 3f;
 
 	//auxiliary values
 	public static bool isInvisible;
@@ -84,7 +85,7 @@ public class Player : MonoBehaviour {
 		{
 			Game.instance.blinkActive.enabled = false;
 			Game.instance.invisibilityActive.enabled = true;
-			StartCoroutine(controller.Invisibility(invisibilityCooldown));
+			StartCoroutine(controller.Invisibility(invisibilityCooldown, invisibilityDuration));
 		}
 
 		#endregion

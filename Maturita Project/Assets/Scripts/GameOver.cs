@@ -3,15 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+	#region Variables
+	public SceneFader sceneFader;
+	public string menuSceneName = "Main Menu";
+	#endregion
+
+
 	#region Methods for Buttons
 	public void Retry()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		sceneFader.FadeTo(SceneManager.GetActiveScene().name);
 	}
 
 	public void Menu()
 	{
-		SceneManager.LoadScene(0);
+		sceneFader.FadeTo(menuSceneName);
 	}
 	#endregion
 }

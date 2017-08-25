@@ -67,7 +67,6 @@ public class Game : MonoBehaviour {
 	#endregion
     void LoadSceneOnLevelFinish()
     {
-		//FindObjectOfType<Player>().GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 		SceneManager.LoadScene(0);
     }
 

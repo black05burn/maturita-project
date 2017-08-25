@@ -5,6 +5,8 @@ public class PauseMenu : MonoBehaviour {
 
 	#region Variables
 	public GameObject UI;
+	public SceneFader sceneFader;
+	public string menuSceneName = "Main Menu";
 	#endregion
 
 	#region Unity Methods
@@ -36,13 +38,13 @@ public class PauseMenu : MonoBehaviour {
 	public void Retry()
 	{
 		Toggle();
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		sceneFader.FadeTo(SceneManager.GetActiveScene().name);
 	}
 
 	public void Menu()
 	{
 		Toggle();
-		SceneManager.LoadScene(0);
+		sceneFader.FadeTo(menuSceneName);
 	}
 
 }

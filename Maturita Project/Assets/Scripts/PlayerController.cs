@@ -120,12 +120,12 @@ public class PlayerController : MonoBehaviour
                     blinkCube.GetComponent<Renderer>().sharedMaterial.color = new Color(80, 80, 80, .25f);
                     canBlink = false;
 
-                    for (int i = 0; i < cooldown; i++)
-                    {
-                        //cooldown
-                        Game.instance.cooldownBlinkText.text = cooldown - i + "";
-                        yield return new WaitForSeconds(1);
-                    }
+					while (cooldown > 0.1f)
+					{
+						cooldown -= Time.deltaTime;
+						Game.instance.cooldownBlinkText.text = string.Format("{0:f1}",cooldown);
+						yield return null;
+					}
 
                     Game.instance.cooldownBlinkText.text = "";
                     canBlink = true;
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public IEnumerator Invisibility(float cooldown)
+    public IEnumerator Invisibility(float cooldown, float duration)
     {
         //initial setup
         blinkCube.SetActive(false);
@@ -166,32 +166,51 @@ public class PlayerController : MonoBehaviour
             GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 3f);
             GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
-            //COOLDOWN
-            for (int i = 0; i < cooldown; i++)
-            {
-                //if visible show actual cooldown
-                if (GetComponent<Renderer>().material.color == playerColor)
-                {
-                    Game.instance.cooldownInvisibilityText.text = cooldown - i + "";
-                }
-                else
-                {
-                    //show invisible time left
-                    if (i < Mathf.FloorToInt(cooldown/2))
-                    {
-                        Game.instance.cooldownInvisibilityText.text = cooldown/2 - i + "";
-                    }
-                    //invisible to visible
-                    else if (i == Mathf.FloorToInt(cooldown/2))
-                    {
-                        Player.isInvisible = false;
-                        GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
-                        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-                        Game.instance.cooldownInvisibilityText.text = cooldown / 2 + "";
-                    }
-                }
-                yield return new WaitForSeconds(1);
-            }
+            ////COOLDOWN
+            //for (int i = 0; i < cooldown; i++)
+            //{
+            //    //if visible show actual cooldown
+            //    if (GetComponent<Renderer>().material.color == playerColor)
+            //    {
+            //        Game.instance.cooldownInvisibilityText.text = cooldown - i + "";
+            //    }
+            //    else
+            //    {
+            //        //show invisible time left
+            //        if (i < Mathf.FloorToInt(cooldown/2))
+            //        {
+            //            Game.instance.cooldownInvisibilityText.text = cooldown/2 - i + "";
+            //        }
+            //        //invisible to visible
+            //        else if (i == Mathf.FloorToInt(cooldown/2))
+            //        {
+            //            Player.isInvisible = false;
+            //            GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
+            //            GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            //            Game.instance.cooldownInvisibilityText.text = cooldown / 2 + "";
+            //        }
+            //    }
+            //    yield return new WaitForSeconds(1);
+            //}
+
+			while (cooldown > 0.1f)
+			{
+				cooldown -= Time.deltaTime;
+				while (duration > 0.1f && Player.isInvisible)
+				{
+					duration -= Time.deltaTime;
+					Game.instance.cooldownInvisibilityText.color = new Color(0f, 100f, 100f);
+					Game.instance.cooldownInvisibilityText.text = string.Format("{0:f1}", duration + 0.01f);
+					yield return null;
+				}
+				Player.isInvisible = false;
+				GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
+				GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+
+				Game.instance.cooldownInvisibilityText.color = new Color(100f, 100f, 100f);
+				Game.instance.cooldownInvisibilityText.text = string.Format("{0:f1}", cooldown + 0.01f);
+				yield return null;
+			}
 
             Game.instance.cooldownInvisibilityText.text = "";
 			invisible = false;

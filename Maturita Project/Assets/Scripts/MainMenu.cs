@@ -5,11 +5,12 @@ public class MainMenu : MonoBehaviour {
 
 	#region Variables
 	public string levelToLoad = "Level 01";
+	public SceneFader sceneFader;
 	#endregion
 
 	public void Play()
 	{
-		SceneManager.LoadScene(levelToLoad);
+		sceneFader.FadeTo(levelToLoad);
 	}
 
 	public void Quit()

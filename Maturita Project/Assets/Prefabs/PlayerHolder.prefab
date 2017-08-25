@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8078220ccbbe954488f529cacbd9225f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devMode: 0
   moveSpeed: 5
   blinkCooldown: 5
-  invisibilityCooldown: 8
+  invisibilityCooldown: 5
+  invisibilityDuration: 3
   keysHolder: {fileID: 4982301999915124, guid: 39dc247480d1d38499c98dc8ea242ec8, type: 2}
 --- !u!114 &114690390143145308
 MonoBehaviour:
