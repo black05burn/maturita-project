@@ -143,6 +143,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114036342369814602, guid: 061eb1f698ed741429a1c99865af4b42,
+        type: 2}
+      propertyPath: invisibilityCooldown
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061eb1f698ed741429a1c99865af4b42, type: 2}
   m_IsPrefabParent: 0
@@ -319,6 +324,21 @@ Prefab:
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 469512076}
+    - target: {fileID: 114344509441525504, guid: 985e0e72c8b803f4d8535f3e1795f5ff,
+        type: 2}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344509441525504, guid: 985e0e72c8b803f4d8535f3e1795f5ff,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344509441525504, guid: 985e0e72c8b803f4d8535f3e1795f5ff,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.172
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 985e0e72c8b803f4d8535f3e1795f5ff, type: 2}
   m_IsPrefabParent: 0

@@ -9,19 +9,18 @@ public class Game : MonoBehaviour {
 
     [Header("Game over")]
 	public GameObject gameOverUI;
-    //public Text gameOverText;
-    //bool gameIsOver = false;
 
     [Header("Blink")]
-    public Text cooldownBlinkText;
     public RawImage blinkActive;
+	public Image cooldownBlinkImage;
 
     [Header("Invisibility")]
-    public Text cooldownInvisibilityText;
     public RawImage invisibilityActive;
+	public Image cooldownInvisibilityImage;
+	public Image durationInvisibilityImage;
 
-    //can bee reached from every class (only one game manager)
-    public static Game instance;
+	//can bee reached from every class (only one game manager)
+	public static Game instance;
 	//dev/cheat mode
 	public static bool dev = false;
 	#endregion
