@@ -9,6 +9,7 @@ public class Game : MonoBehaviour {
 
     [Header("Game over")]
 	public GameObject gameOverUI;
+	public GameObject winLevelUI;
 
     [Header("Blink")]
     public RawImage blinkActive;
@@ -18,6 +19,7 @@ public class Game : MonoBehaviour {
     public RawImage invisibilityActive;
 	public Image cooldownInvisibilityImage;
 	public Image durationInvisibilityImage;
+
 
 	//can bee reached from every class (only one game manager)
 	public static Game instance;
@@ -66,7 +68,7 @@ public class Game : MonoBehaviour {
 	#endregion
     void LoadSceneOnLevelFinish()
     {
-		SceneManager.LoadScene(0);
+		winLevelUI.SetActive(true);
     }
 
     void ShowGameOverUI()

@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   blinkCooldown: 5
-  invisibilityCooldown: 5
+  invisibilityCooldown: 8
   invisibilityDuration: 3
   keysHolder: {fileID: 4982301999915124, guid: 39dc247480d1d38499c98dc8ea242ec8, type: 2}
 --- !u!114 &114690390143145308

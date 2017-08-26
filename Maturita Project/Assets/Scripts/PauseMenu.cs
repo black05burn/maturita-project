@@ -19,6 +19,9 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 
+
+	#endregion
+
 	public void Toggle()
 	{
 		UI.SetActive(!UI.activeSelf);
@@ -32,8 +35,6 @@ public class PauseMenu : MonoBehaviour {
 			Time.timeScale = 1f;
 		}
 	}
-
-	#endregion
 
 	public void Retry()
 	{

@@ -16,6 +16,7 @@ public class SceneFader : MonoBehaviour {
 
 	private void Start()
 	{
+		print(gameObject.activeSelf);
 		StartCoroutine(FadeIn());
 	}
 
@@ -23,6 +24,7 @@ public class SceneFader : MonoBehaviour {
 
 	public void FadeTo(string scene)
 	{
+		gameObject.SetActive(true);
 		StartCoroutine(FadeOut(scene));
 	}
 

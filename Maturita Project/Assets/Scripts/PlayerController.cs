@@ -178,11 +178,13 @@ public class PlayerController : MonoBehaviour
 					Game.instance.durationInvisibilityImage.fillAmount = d / duration;
 					yield return null;
 				}
-
 				//making player visible
 				Player.isInvisible = false;
 				GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
 				GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+
+				if (Game.instance.durationInvisibilityImage.fillAmount > 0f)
+					Game.instance.durationInvisibilityImage.fillAmount = 0f;
 
 				Game.instance.cooldownInvisibilityImage.fillAmount = c / cooldown;
 				yield return null;
