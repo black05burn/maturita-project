@@ -1,0 +1,57 @@
+Initialize engine version: 5.5.4f1 (8ffd0efd98b1)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 730 (ID=0x1287)
+    Vendor:   NVIDIA
+    VRAM:     2018 MB
+    Driver:   20.19.15.4531
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.021 seconds
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Dave\Documents\_Unity Projects\maturita-project\Maturita Project\Builds\1.0\DBGame_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initialized touch support.
+UnloadTime: 1.015553 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 27ac -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.270540 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 328.
+Total: 0.260754 ms (FindLiveObjects: 0.037726 ms CreateObjectMapping: 0.023856 ms MarkObjects: 0.195288 ms  DeleteObjects: 0.003606 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.920980 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 842.
+Total: 0.326774 ms (FindLiveObjects: 0.047435 ms CreateObjectMapping: 0.026352 ms MarkObjects: 0.243555 ms  DeleteObjects: 0.009431 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.138163 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 843.
+Total: 0.402781 ms (FindLiveObjects: 0.065188 ms CreateObjectMapping: 0.022746 ms MarkObjects: 0.300976 ms  DeleteObjects: 0.013315 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.664645 ms
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 305.
+Total: 0.545919 ms (FindLiveObjects: 0.026075 ms CreateObjectMapping: 0.016366 ms MarkObjects: 0.190849 ms  DeleteObjects: 0.312072 ms)
+
+Exiting...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
