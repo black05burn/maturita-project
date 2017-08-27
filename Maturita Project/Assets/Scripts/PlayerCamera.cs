@@ -4,7 +4,7 @@ public class PlayerCamera : MonoBehaviour {
 
 	#region Variables
 	Transform player;
-
+	public float camHeight = 10f;
 	public float smoothSpeed = 10f;
 	public Vector3 offset = new Vector3(0f, 30f, 0f);
 	#endregion
@@ -13,7 +13,11 @@ public class PlayerCamera : MonoBehaviour {
 	private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+		Camera.main.orthographic = true;
+		Camera.main.orthographicSize = camHeight;
+		Camera.main.clearFlags = CameraClearFlags.Color;
+		Camera.main.backgroundColor = Color.black;
+	}
 
 	private void LateUpdate()
     {

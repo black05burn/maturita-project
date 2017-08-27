@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 	//input
 	Camera viewCam;
 	PlayerController controller;
-	Vector3 point;
+	Vector3 velocity;
 
 	[Space]
 	public Transform keysHolder;
@@ -31,13 +31,13 @@ public class Player : MonoBehaviour {
 	#region Unity Methods
 
 	private void Awake()
-	{
-		viewCam = Camera.main;
+	{ 
 		controller = GetComponent<PlayerController>();
 	}
 
 	private void Start()
 	{
+		viewCam = Camera.main;
 		isInvisible = false;
 		GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 		//text to show how many keys left
@@ -46,21 +46,11 @@ public class Player : MonoBehaviour {
 
 	private void Update()
 	{
-		//movement input
-		Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-		controller.Move(moveInput * moveSpeed);
-
-		//mouse input
-		Ray ray = viewCam.ScreenPointToRay(Input.mousePosition);
-		Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-
-		float rayDistance;
-		if (groundPlane.Raycast(ray, out rayDistance))
-		{
-			//look at mouse point
-			point = ray.GetPoint(rayDistance);
-			controller.LookAt(point);
-		}
+		//input
+		Vector3 mousePos = viewCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, viewCam.transform.position.y));
+		transform.LookAt(mousePos + Vector3.up * transform.position.y);
+		velocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized * moveSpeed;
+		controller.Move(velocity);
 
 		#region POWERS
 
@@ -81,7 +71,7 @@ public class Player : MonoBehaviour {
 		{
 			Game.instance.blinkActive.enabled = true;
 			Game.instance.invisibilityActive.enabled = false;
-			StartCoroutine(controller.Blink(point, blinkCooldown));
+			StartCoroutine(controller.Blink(mousePos, blinkCooldown));
 		}
 		if (invisibility)
 		{
@@ -91,8 +81,6 @@ public class Player : MonoBehaviour {
 		}
 
 		#endregion
-
-		
 	}
 
 	#region FINISH
