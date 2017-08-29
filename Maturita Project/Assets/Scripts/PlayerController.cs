@@ -115,7 +115,8 @@ public class PlayerController : MonoBehaviour
                     transform.position = blinkCube.transform.position;
                     //set player to visible
                     GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
-                    Player.isInvisible = false;
+					Game.instance.cooldownInvisibilityImage.fillAmount = 0f;
+					Player.isInvisible = false;
                     //play audio and animation
                     Audio.instance.PlaySound(blinkSound, transform.position);
                     anim.Play("BlinkAnimation");
@@ -127,6 +128,7 @@ public class PlayerController : MonoBehaviour
 					while (c > 0f)
 					{
 						c -= Time.deltaTime;
+						Game.instance.cooldownBlinkText.text = (c > 0) ? Mathf.CeilToInt(c).ToString() : null;
 						Game.instance.cooldownBlinkImage.fillAmount = c / cooldown;
 						yield return null;
 					}
@@ -186,10 +188,9 @@ public class PlayerController : MonoBehaviour
 				GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
 				GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 
-				if (Game.instance.durationInvisibilityImage.fillAmount > 0f)
-					Game.instance.durationInvisibilityImage.fillAmount = 0f;
-
-				Game.instance.cooldownInvisibilityImage.fillAmount = c / cooldown;
+				Game.instance.cooldownInvisibilityText.color = Color.white;
+				Game.instance.cooldownInvisibilityText.text = (c > 0) ? Mathf.CeilToInt(c).ToString() : null;
+				Game.instance.cooldownInvisibilityImage.fillAmount = (c > 0f) ? c / cooldown : 0f;
 				yield return null;
 			}
 

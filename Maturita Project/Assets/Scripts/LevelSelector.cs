@@ -5,6 +5,8 @@ public class LevelSelector : MonoBehaviour {
 
 	#region Variables
 	public SceneFader sceneFader;
+	public string mainMenu = "Main Menu";
+	public string levelSelect = "Level Select";
 
 	public Button[] levelButtons;
 	#endregion
@@ -24,7 +26,7 @@ public class LevelSelector : MonoBehaviour {
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			sceneFader.FadeTo("Main Menu");
+			sceneFader.FadeTo(mainMenu);
 		}
 	}
 	#endregion
@@ -32,5 +34,11 @@ public class LevelSelector : MonoBehaviour {
 	public void Select(string levelName)
 	{
 		sceneFader.FadeTo(levelName);
+	}
+
+	public void ResetProgress()
+	{
+		PlayerPrefs.SetInt("levelReached", 1);
+		sceneFader.FadeTo(levelSelect);
 	}
 }

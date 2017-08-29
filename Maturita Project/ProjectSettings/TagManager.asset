@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BlinkCube
   - Key
+  - Guard
   layers:
   - Default
   - TransparentFX

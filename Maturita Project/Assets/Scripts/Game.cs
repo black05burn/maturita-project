@@ -14,11 +14,13 @@ public class Game : MonoBehaviour {
     [Header("Blink")]
     public RawImage blinkActive;
 	public Image cooldownBlinkImage;
+	public Text cooldownBlinkText;
 
     [Header("Invisibility")]
     public RawImage invisibilityActive;
 	public Image cooldownInvisibilityImage;
 	public Image durationInvisibilityImage;
+	public Text cooldownInvisibilityText;
 
 	[Space]
 	public Text keys;
