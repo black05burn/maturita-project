@@ -519,7 +519,7 @@ MonoBehaviour:
   viewDistance: 10
   viewMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   bulletPrefab: {fileID: 1980718894500092, guid: 6961a697653409544bd127dc7349acce,
     type: 2}
   firePoint: {fileID: 4651327252929292}
