@@ -96,7 +96,10 @@ public class Player : MonoBehaviour {
 				}
 				else
 				{
-					print("You need to find a KEY");
+					if (gameObject != null)
+					{
+						StartCoroutine(Game.instance.ShowHideFinishText());
+					}
 					//GAME UI needed here!!!
 				}
 			}

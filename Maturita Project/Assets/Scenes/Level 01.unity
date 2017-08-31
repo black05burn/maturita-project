@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5e54d415448747a99e10dbfdd103b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camHeight: 10
+  camHeight: 20
   smoothSpeed: 10
   offset: {x: 0, y: 30, z: 0}
 --- !u!1 &899984618

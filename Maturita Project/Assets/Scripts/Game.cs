@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,8 +23,9 @@ public class Game : MonoBehaviour {
 	public Image durationInvisibilityImage;
 	public Text cooldownInvisibilityText;
 
-	[Space]
+	[Header("Keys and Finish")]
 	public Text keys;
+	public Text finish;
 
 
 	//can bee reached from every class (only one game manager)
@@ -80,5 +82,12 @@ public class Game : MonoBehaviour {
     {
 		gameOverUI.SetActive(true);
     }
+
+	public IEnumerator ShowHideFinishText()
+	{
+		finish.gameObject.SetActive(true);
+		yield return new WaitForSeconds(1);
+		finish.gameObject.SetActive(false);
+	}
 
 }
