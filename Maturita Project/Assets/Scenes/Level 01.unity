@@ -598,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blinkObstacleMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   blinkCube: {fileID: 2078137283}
   blinkRange: 5
   blinkSound: {fileID: 8300000, guid: 9df80a3f2dd0efd4784846e0839032b8, type: 3}
