@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8078220ccbbe954488f529cacbd9225f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 7
   blinkCooldown: 5
   invisibilityCooldown: 8
   invisibilityDuration: 3
@@ -2311,6 +2311,16 @@ Prefab:
         type: 2}
       propertyPath: m_FillAmount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114841088854988124, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.509
+      objectReference: {fileID: 0}
+    - target: {fileID: 114841088854988124, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.631
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e4eaadbb07b8964b81b41e4fc31938b, type: 2}

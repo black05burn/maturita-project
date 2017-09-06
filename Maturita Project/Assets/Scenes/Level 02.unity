@@ -3160,12 +3160,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114173179905753076, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
+    - target: {fileID: 114987428104552448, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
         type: 2}
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 1144014110}
     - target: {fileID: 114079704085805928, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
+        type: 2}
+      propertyPath: sceneFader
+      value: 
+      objectReference: {fileID: 1144014110}
+    - target: {fileID: 114173179905753076, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
         type: 2}
       propertyPath: sceneFader
       value: 
@@ -3175,21 +3180,6 @@ Prefab:
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 1144014110}
-    - target: {fileID: 114987428104552448, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
-        type: 2}
-      propertyPath: sceneFader
-      value: 
-      objectReference: {fileID: 1144014110}
-    - target: {fileID: 114079704085805928, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
-        type: 2}
-      propertyPath: nextLevel
-      value: Level 03
-      objectReference: {fileID: 0}
-    - target: {fileID: 114079704085805928, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
-        type: 2}
-      propertyPath: levelToUnlock
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e4eaadbb07b8964b81b41e4fc31938b, type: 2}
   m_IsPrefabParent: 0

@@ -191,7 +191,6 @@ public class PlayerController : MonoBehaviour
 				GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
 				GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 
-				Game.instance.cooldownInvisibilityText.color = Color.white;
 				Game.instance.cooldownInvisibilityText.text = (c > 0) ? Mathf.CeilToInt(c).ToString() : null;
 				Game.instance.cooldownInvisibilityImage.fillAmount = (c > 0f) ? c / cooldown : 0f;
 				yield return null;

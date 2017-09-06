@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8078220ccbbe954488f529cacbd9225f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6.5
+  moveSpeed: 7
   blinkCooldown: 5
   invisibilityCooldown: 8
   invisibilityDuration: 3

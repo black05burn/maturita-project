@@ -39,6 +39,7 @@ public class Player : MonoBehaviour {
 		viewCam = Camera.main;
 		isInvisible = false;
 		GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+
 		//text to show how many keys left
 		Game.instance.keys.text = (keysHolder.childCount - 1 > 1) ? string.Format("Find {0} keys", keysHolder.childCount) : "Find 1 key";
 	}
