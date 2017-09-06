@@ -683,6 +683,11 @@ Prefab:
       propertyPath: meshResolution
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114599258677910152, guid: 061eb1f698ed741429a1c99865af4b42,
+        type: 2}
+      propertyPath: obstacleMask.m_Bits
+      value: 2304
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061eb1f698ed741429a1c99865af4b42, type: 2}
   m_IsPrefabParent: 0

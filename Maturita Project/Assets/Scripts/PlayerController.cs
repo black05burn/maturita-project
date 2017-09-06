@@ -113,13 +113,16 @@ public class PlayerController : MonoBehaviour
                 {
                     //blink to position
                     transform.position = blinkCube.transform.position;
+
                     //set player to visible
                     GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1f);
-					Game.instance.cooldownInvisibilityImage.fillAmount = 0f;
+					Game.instance.durationInvisibilityImage.fillAmount = 0f;
 					Player.isInvisible = false;
+
                     //play audio and animation
                     Audio.instance.PlaySound(blinkSound, transform.position);
                     anim.Play("BlinkAnimation");
+
                     //change of color on cooldown
                     blinkCube.GetComponent<Renderer>().sharedMaterial.color = colorOfBlinkCubeOnCooldown;
                     canBlink = false;

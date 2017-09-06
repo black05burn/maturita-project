@@ -510,10 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2539bd173eaf91a409327566d067e340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   waitTime: 0.3
-  turnSpeed: 90
-  timeToSpotPlayer: 0.5
+  turnSpeed: 120
+  timeToSpotPlayer: 0.45
   pathHolder: {fileID: 4892506777681830}
   spotLight: {fileID: 108384733320021080}
   viewDistance: 10

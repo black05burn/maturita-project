@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8078220ccbbe954488f529cacbd9225f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6
   blinkCooldown: 5
   invisibilityCooldown: 8
   invisibilityDuration: 3
@@ -1867,6 +1867,21 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114992584885918166, guid: d817b869a575ef04385efc5f3d30a18e,
+        type: 2}
+      propertyPath: turnSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114992584885918166, guid: d817b869a575ef04385efc5f3d30a18e,
+        type: 2}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114992584885918166, guid: d817b869a575ef04385efc5f3d30a18e,
+        type: 2}
+      propertyPath: timeToSpotPlayer
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d817b869a575ef04385efc5f3d30a18e, type: 2}
   m_IsPrefabParent: 0
@@ -2286,6 +2301,16 @@ Prefab:
         type: 2}
       propertyPath: levelToUnlock
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494764679396648, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
+        type: 2}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114841088854988124, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
+        type: 2}
+      propertyPath: m_FillAmount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e4eaadbb07b8964b81b41e4fc31938b, type: 2}
