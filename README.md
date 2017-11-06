@@ -3,8 +3,7 @@ Game project for my graduation.
 I am creating a game in unity.
 
 ---
-výběr tématu (moodle GPOA) 25. – 27. 9. 2017
----
+* DONE výběr tématu (moodle GPOA) 25. – 27. 9. 2017
 * odevzdání 1. verze maturitní práce na moodle GPOA 8. 12. 2017
 * odevzdání 2. verze maturitní práce na moodle GPOA 26. 1. 2018
 * odevzdání 3. verze maturitní práce na moodle GPOA 2. 3. 2018
