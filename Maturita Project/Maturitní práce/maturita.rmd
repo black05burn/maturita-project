@@ -1,0 +1,145 @@
+---
+output:
+  pdf_document:
+    fig_caption: yes
+    number_sections: yes
+urlcolor: black
+linkcolor: black
+fontsize: 12px
+geometry: "left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
+bibliography: uni.bib
+header-includes:
+- \usepackage{placeins}
+- \usepackage{setspace}
+- \usepackage{chngcntr}
+- \onehalfspacing
+- \counterwithin{figure}{section}
+- \counterwithin{table}{section}
+- \usepackage[czech]{babel}
+---
+<!-- Titulní strana  -->
+\begin{titlepage}
+\begin{center}
+\textbf{GYMNÁZIUM, STŘEDNÍ PEDAGOGICKÁ ŠKOLA, OBCHODNÍ AKADEMIE A JAZYKOVÁ ŠKOLA s právem státní jazykové zkoušky ZNOJMO, příspěvková organizace} 
+\vspace{2mm}
+\line(1,0){425}
+
+\vspace{2mm}
+
+\tiny{669 02  Znojmo, Pontassievská 3 • tel.: 515158101 • fax: 515225230 • e-mail: info@gpoa.cz • www.gpoa.cz, IČ:49438816}
+\end{center}
+
+\vspace{1.5cm}
+
+\begin{center}
+\textbf{\large{Maturitní práce}}
+\end{center}
+
+\vspace{1.5cm}
+
+Žák: David Beneš\\
+Třída: E4.C \\
+Školní rok: 2017/2018\\
+Obor vzdělání: Informační technologie
+
+\vspace{1.5cm}
+
+Název maturitní práce: Tvorba počítačové hry
+
+\vspace{1.5cm}
+
+Vedoucí maturitní práce: Mgr. Milička Tomáš\\
+Oponent maturitní práce:
+
+\vspace{1.5cm}
+
+Sociální partner: GYMNÁZIUM, STŘEDNÍ PEDAGOGICKÁ ŠKOLA, OBCHODNÍ 
+
+\hspace{2.5cm}AKADEMIE A JAZYKOVÁ ŠKOLA s právem státní jazykové
+
+\hspace{2.5cm}zkoušky ZNOJMO, příspěvková organizace\\
+[1.5cm]
+Práce odevzdána dne: (datum)\\
+[1.5cm]
+Podpis žáka: (podpis)
+\end{titlepage}
+
+
+<!-- PROHLÁŠENÍ -->
+\section*{Prohlášení}
+\vspace{1.5cm}
+    Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
+    \vspace{1.5cm}
+    Místo datum
+    \vspace{2cm}
+    David Beneš
+    
+\newpage
+<!-- ANOTACE  -->
+\section*{Anotace}
+
+\pagebreak
+
+<!-- OBSAH  -->
+\tableofcontents
+
+\pagebreak
+
+
+# Úvod  
+ Téma jsem si vybral, protože mě vždy zajímalo jak se hry vyvíjí. Dále jsem chtěl vědět, jestli vůbec takovou hru dokážu naprogramovat. Také jsem zastáncem názoru, že programování se dá naučit jedině praxí.
+
+## Vymezení cílů
+
+\pagebreak
+
+# Využité programy
+
+## Unity
+
+@website:unity-manual
+
+### Představení
+### Důvod pouzití
+### Výhody
+* a 
+* b 
+* c
+
+1. sdaf 
+1. 1209
+1. asdfo
+
+### Nevýhody
+### Alternativy
+
+## Visual Studio
+### Představení
+### Důvod pouzití
+### Výhody
+### Nevýhody
+### Alternativy
+
+\pagebreak
+
+# Základní pojmy
+
+\pagebreak
+
+# Průběh vývoje
+## Výběr žánru
+## Ovládání postavy
+## Schopnosti
+### Blink
+### Neviditelnost
+## Nepřítel
+## Cíl úrovní
+
+\pagebreak
+
+# Problémy vývoje
+
+\pagebreak
+
+<!-- CITACE  -->
+\section*{Citace}
