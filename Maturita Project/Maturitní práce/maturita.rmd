@@ -3,11 +3,11 @@ output:
   pdf_document:
     fig_caption: yes
     number_sections: yes
+    citation_package: natbib
 urlcolor: black
 linkcolor: black
 fontsize: 12px
 geometry: "left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
-bibliography: uni.bib
 header-includes:
 - \usepackage{placeins}
 - \usepackage{setspace}
@@ -16,7 +16,10 @@ header-includes:
 - \counterwithin{figure}{section}
 - \counterwithin{table}{section}
 - \usepackage[czech]{babel}
+bibliography: uni.bib
+csl: biomed-central.csl
 ---
+
 <!-- Titulní strana  -->
 \begin{titlepage}
 \begin{center}
@@ -67,12 +70,18 @@ Podpis žáka: (podpis)
 
 <!-- PROHLÁŠENÍ -->
 \section*{Prohlášení}
+
 \vspace{1.5cm}
-    Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
-    \vspace{1.5cm}
-    Místo datum
-    \vspace{2cm}
-    David Beneš
+
+Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
+
+\vspace{1.5cm}
+
+Místo datum
+
+\vspace{2cm}
+
+David Beneš
     
 \newpage
 <!-- ANOTACE  -->
@@ -90,47 +99,66 @@ Podpis žáka: (podpis)
  Téma jsem si vybral, protože mě vždy zajímalo jak se hry vyvíjí. Dále jsem chtěl vědět, jestli vůbec takovou hru dokážu naprogramovat. Také jsem zastáncem názoru, že programování se dá naučit jedině praxí.
 
 ## Vymezení cílů
+Mým hlavním cílem je naprogramovat hru pomocí jazyka C\#. Neměla by být moc obtížná na naučení, ale měla by být těžká na pokoření (@website:ez2play-hard2master). Game design by měl být jednoduchý a přehledný, ať se hráč jednoduše vyzná kde se právě nachází. Hra by se měla zaměřovat na schovávání se před nepřáteli, a ne na jejich zabíjení.
+
 
 \pagebreak
 
 # Využité programy
 
 ## Unity
-
-@website:unity-manual
-
 ### Představení
-### Důvod pouzití
-### Výhody
-* a 
-* b 
-* c
+Unity je herní engine.
+Je používaný pro vývoj jak indie (nezávislých), tak AAA her. Je v něm možná naprogramovat hru v jazyce C\#, který je rozšířen o mnoho Unity knihoven, ale i v JavaScriptu.
 
-1. sdaf 
-1. 1209
-1. asdfo
+### Důvod pouzití
+Unity jsem si vybral, protože se mi hned na první pohled zalíbilo. Má krásný a jednoduchý design. Také znám spoustu her, které jsou za pomocí Unity enginu vytvořené.
+Velikým důvodem pro výběr byla také dostupnost v jazyce C\#, což ne všechny herní enginy nabízejí.
+
+### Výhody
+- Jednoduchost
+- Je zdarma pro osobní i komerční účely (do \$100k)
+- Dostupnost jazyka C\#
 
 ### Nevýhody
+- Pro úplné nástroje je třeba zaplatit
+
 ### Alternativy
+- Unreal Engine
+	- Od společnosti Epic Games
+	- Více se zaměřuje na systém akce a reakce, než se zaměřuje na programování
+- CryEngine
+	- Od společnosti Crytech
 
 ## Visual Studio
 ### Představení
+Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 @website:vs
 ### Důvod pouzití
 ### Výhody
+- Je zdarma pro osobní i komerční účely pro jedince
+- Dostupnost jazyka C\#
+- Jednoduché debugování
 ### Nevýhody
+- Není multiplatformní (neexistuje verze pro linux)
 ### Alternativy
-
-\pagebreak
-
-# Základní pojmy
+- monodevelop
+- atom
+- vs code
 
 \pagebreak
 
 # Průběh vývoje
 ## Výběr žánru
+Na začátku jsem musel vymyslet v jakém duchu budu hru vyvýjet. Jelikož mám velice rád stealth hry @STEALTH, rozhodl jsem se vytvořit v tomto duchu. Nechtěl jsem, aby hráč začil nějakou výzvu, a tak ve hře nejsou žádné zbraně. Pro záživnějsí průbeh jsem se rozhodl zahrnout do hry nějaké superschopnosti.
+
 ## Ovládání postavy
+Hráč ovládá postavu pomocí základních WASD tlačítek. Pomocí myši míří a rozhlíží se po úrovni. Pro pohyb jsem využil Vector3 @VECTOR3 a to tak, že jsem k pozici postavy přičetl jednotkový vektor a vynásobil rychlostí, kterou jsem si vybral. Pro otáčení hráče ke kurzoru jsem prvně musel zjistit, kde je kurzor. To jsem udělal pomocí kamery, která je na scéně. Ta dokáže vypočítat, kam na jaký bod kurzor míří. Aby se postava nedívala do země, přičetl jsem výšku postavy k tomuto bodu. Pro samotné otočení postavy k bodu jsem musel využít quaternion @QUATERNION. Ten sice zjistí, jak daleko se musí postava otočit, ale poté je nutno ho převést na tzv. eulerAngles @EULERANGLES. Díky tomu pak víme, o kolik se na jednotlivých osách postava musí natočit.
+
 ## Schopnosti
+Při výběru schopností jsem se nechal inspirovat ze stealth her a moba her. Hlavně pak Dishonored a Dota2.
+
 ### Blink
+
 ### Neviditelnost
 ## Nepřítel
 ## Cíl úrovní
@@ -140,6 +168,5 @@ Podpis žáka: (podpis)
 # Problémy vývoje
 
 \pagebreak
-
 <!-- CITACE  -->
-\section*{Citace}
+<!--\section*{Citace} -->
