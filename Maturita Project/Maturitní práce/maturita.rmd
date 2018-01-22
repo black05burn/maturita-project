@@ -87,6 +87,12 @@ David Beneš
 <!-- ANOTACE  -->
 \section*{Anotace}
 
+Maturitní práce se zaměřuje na programování v jazyce C\# v herním enginu Unity. V práci je popsán vývoj hry a veškeré problémy, které s vývojem souvisí.
+
+**Klíčová slova**
+
+hra, csharp, unity, programování
+
 \pagebreak
 
 <!-- OBSAH  -->
@@ -107,6 +113,7 @@ Mým hlavním cílem je naprogramovat hru pomocí jazyka C\#. Neměla by být mo
 # Využité programy
 
 ## Unity
+
 ### Představení
 Unity je herní engine.
 Je používaný pro vývoj jak indie (nezávislých), tak AAA her. Je v něm možná naprogramovat hru v jazyce C\#, který je rozšířen o mnoho Unity knihoven, ale i v JavaScriptu.
@@ -131,15 +138,21 @@ Velikým důvodem pro výběr byla také dostupnost v jazyce C\#, což ne všech
 	- Od společnosti Crytech
 
 ## Visual Studio
+
 ### Představení
-Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 @website:vs
+Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 @website:vs. Tento program vytvořil microsoft, proto má skvělou podporu jazyka C\#.
+
 ### Důvod pouzití
+
+
 ### Výhody
 - Je zdarma pro osobní i komerční účely pro jedince
 - Dostupnost jazyka C\#
 - Jednoduché debugování
+
 ### Nevýhody
 - Není multiplatformní (neexistuje verze pro linux)
+
 ### Alternativy
 - monodevelop
 - atom
@@ -158,8 +171,16 @@ Hráč ovládá postavu pomocí základních WASD tlačítek. Pomocí myši mí�
 Při výběru schopností jsem se nechal inspirovat ze stealth her a moba her. Hlavně pak Dishonored a Dota2.
 
 ### Blink
+Blink je teleportace na krátkou vzdálenost. Pomáhá hráči k rychlému přesunu. 
+Prvně jsem se rozhodl vytvořit vizuální zobrazení pro hráče. Vytvořil jsem čáru, které začala v postavě a končila na kurzoru hráče (pro získání kurzoru jsem využil stejný postup jako při otáčení postavy). Na konci čáry jsem přidal kostku, aby hráč věděl, kam se přesune. Poté jsem řešil maximální vzdálenost teleportu. Vytvořil jsem si proměnou, která uchovávála desetinné číslo, které určuje maximální vzálenost. Pomocí IF podmínky jsem zjistil, jestli vzdálenost postavy od konce čáry je delší než je tato proměná. Pokud ano zkrátím čáru na maximální vzdálenost ve směru kurzoru. Poté jsem musel zabránit teleportaci skrz zdi. Prvně jsem zjistil, jestli je na konci čáry zeď pomocí Physics.Raycast @RAYCAST. Pokud ano, tak čáru zkrátil na vzdálenost hráče od této zdi. Nakonec jsem musel vyřešit samotný teleport. To bylo velice jednoduché, protože stačilo nastavit pozici postavy na pozici, která je na konci čáry.
 
 ### Neviditelnost
+Pro neviditelnost jsem použil globální proměnnou, kterou jsem si vytvořil. Tu jsem pak předával nepříteli, aby "nevnímal" hráče. Težší bylo zajistit, aby neviditelnost trvala nějakou dobu a pak se hráč opět zviditelni. 
+Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může být hráč neviditelný. Každým průchodem cyklu jsem od této proměné odečetl sekundu pomocí Time.Deltatime @DELTATIME. Dokud byla proměná větší jak 0, tak byl hráč neviditelný. Aby hráč věděl, kdy je neviditelný musel jsem změnit barvu postavy. Prvně jsem získal materiál postavy a pak nastavil průhlednost nastavil na 1/3. Až se hráč opět zviditelnil, nastavil jsem zpět hodnotu 1.
+
+### Cooldown
+Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat byla proměná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
+
 ## Nepřítel
 ## Cíl úrovní
 
