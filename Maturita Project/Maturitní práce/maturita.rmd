@@ -24,7 +24,9 @@ csl: biomed-central.csl
 \begin{titlepage}
 \begin{center}
 \textbf{GYMNÁZIUM, STŘEDNÍ PEDAGOGICKÁ ŠKOLA, OBCHODNÍ AKADEMIE A JAZYKOVÁ ŠKOLA s právem státní jazykové zkoušky ZNOJMO, příspěvková organizace} 
+
 \vspace{2mm}
+
 \line(1,0){425}
 
 \vspace{2mm}
@@ -73,6 +75,7 @@ Podpis žáka: (podpis)
 
 \vspace{1.5cm}
 
+<<<<<<< HEAD
 Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
 
 \vspace{1.5cm}
@@ -82,6 +85,17 @@ Místo datum
 \vspace{2cm}
 
 David Beneš
+=======
+    Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
+    
+	\vspace{1.5cm}
+	
+    Místo datum
+	
+    \vspace{2cm}
+	
+    David Beneš
+>>>>>>> c1c08118b0726763cb85146cc7045b93752ba4bd
     
 \newpage
 <!-- ANOTACE  -->
