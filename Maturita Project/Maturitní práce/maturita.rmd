@@ -203,6 +203,16 @@ Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni ro
 
 # Problémy vývoje
 
+## Úvod
+Jelikož jsem začátečník v programování a zároveň v enginu Unity, narazil jsem na spoustu problémů. Pár větších bych teď chtěl popsat.
+
+## Pohyb a rotace postavy
+Při pohybu jsem musel upravovat rychlost. Po té jsem narazil na problém při kolizích postavy a země či zdí. Postava stále propadávala. Zjistil jsem, že to bylo ve velikosti collideru země, o něco málo jsem o zvětšil a vše bylo v pořádku.
+Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kurzoru. Byl zde probém zjištění místa kurzoru. Ten jsem docela rychle vyřešil pomocí některých metod, které unity poskytuje. Po té se ale postava stále koukala do země, takže jsem se nemohl normálně pohybovat. Pomocí youtube videí jsem zjistil, že se dá nalézt kurzor elegantněji. To mi sice pomohlo, ale stále se postava dívala trošku jinam, než měla. Nakonec jsem to vyřešil přičtením této odchylky a vše funguje normálně.
+
+## Otáčení nepřátel
+
+
 #Závěr
 S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytli. Dokázal jsem využít již naučené techniky a k nim přidat i nové věci.
 
