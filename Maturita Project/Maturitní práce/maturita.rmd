@@ -213,7 +213,7 @@ Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kur
 ## Otáčení nepřátel
 
 
-#Závěr
+# Závěr
 S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytli. Dokázal jsem využít již naučené techniky a k nim přidat i nové věci.
 
 
