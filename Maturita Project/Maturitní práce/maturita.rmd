@@ -20,11 +20,12 @@ header-includes:
 - \pagestyle{fancy}
 - \fancyhf{}
 - \renewcommand{\headrulewidth}{0pt}
-- \lfoot{Maturitní práce 2017/2018 - E4.C - Beneš David}
+- \lfoot{}
 - \cfoot{}
-- \rfoot{\thepage}
+- \rfoot{}
 - \fancyhead[CO,CE]{}
 - \usepackage[utf8]{inputenc}
+- \addto{\captionsczech}{\renewcommand{\bibname}{References}}
 bibliography: uni.bib
 ---
 
@@ -108,6 +109,10 @@ hra, csharp, unity, programování
 
 \pagebreak
 
+\lfoot{Maturitní práce 2017/2018 - E4.C - Beneš David}
+\cfoot{}
+\rfoot{\thepage}
+\fancyhead[CO,CE]{}
 <!-- OBSAH  -->
 \tableofcontents
 
@@ -156,7 +161,7 @@ Velikým důvodem pro výběr byla také dostupnost v jazyce C\#, což ne všech
 Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 -@website:vs. Tento program vytvořil microsoft, proto má skvělou podporu jazyka C\#.
 
 ### Důvod pouzití
-
+Ve Visual Studiu jsme pracovali i v hodinách programování ve škole, takže jsem měl k programu velice blízko. Dalším důvodem bylo to, že Unity velice dobře pracuje s tímto programem. Nabízí snippets (CSNIPPETS), proto je mnohem jednodušší a rychlejší kód psát. Je tedy mnohem jednodušší soustředit se na to, co je důležité a né na pamatování si všech metod a tříd, které unity poskytuje.
 
 ### Výhody
 - Je zdarma pro osobní i komerční účely pro jedince
@@ -196,11 +201,35 @@ Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může 
 Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat byla proměná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
 
 ## Nepřítel
+
+
 ## Cíl úrovní
+Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který právě otevřel. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
 
 \pagebreak
 
 # Problémy vývoje
+
+## Úvod
+Jelikož jsem začátečník v programování a zároveň v enginu Unity, narazil jsem na spoustu problémů. Pár větších bych teď chtěl popsat.
+
+## Pohyb a rotace postavy
+Při pohybu jsem musel upravovat rychlost. Po té jsem narazil na problém při kolizích postavy a země či zdí. Postava stále propadávala. Zjistil jsem, že to bylo ve velikosti collideru země, o něco málo jsem o zvětšil a vše bylo v pořádku.
+Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kurzoru. Byl zde probém zjištění místa kurzoru. Ten jsem docela rychle vyřešil pomocí některých metod, které unity poskytuje. Po té se ale postava stále koukala do země, takže jsem se nemohl normálně pohybovat. Pomocí youtube videí jsem zjistil, že se dá nalézt kurzor elegantněji. To mi sice pomohlo, ale stále se postava dívala trošku jinam, než měla. Nakonec jsem to vyřešil přičtením této odchylky a vše funguje normálně.
+
+## Otáčení nepřátel
+
+\pagebreak
+
+# Závěr
+S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytly. Dokázal jsem využít již naučené techniky a k nim se naučit nové.
+
+
+## Zhodnocení cílů
+Mnoho svých cílů jsem splnil přesně dle očekávání. Některé jsem musel upravit, aby pro hráče dávali větší smysl a hra byla hratelná. Zkušební verzi jsem poskytoval kamarádům, kteří mi poté poskytli odezvu. Díky tomu jsem například přidal FOG OF WAR (CITACE FOG OF WAR), aby hra nebyla tak jednoduchá.
+
+## Feedback???
+Hru možná budu sdílet na redditu
 
 \pagebreak
 
