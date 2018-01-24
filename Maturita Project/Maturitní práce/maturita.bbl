@@ -1,19 +1,123 @@
-\begin{thebibliography}{2}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem[Bushnell()]{website:ez2play-hard2master}
-Nolan Bushnell.
-\newblock Theorem: Easy to learn, difficult to master.
-\newblock
-  \url{http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master}.
 
-\bibitem[Corporation()]{website:vs}
-Microsoft Corporation.
-\newblock Visual studio community 2017.
-\newblock \url{https://www.visualstudio.com/vs/community}.
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{website:unity-manual}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a392aef636dca7b17db698a1d42d6a22}{%
+           family={SF},
+           familyi={S\bibinitperiod},
+           given={Unity\bibnamedelima Technologies},
+           giveni={U\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{fullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{bibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorbibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authornamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorfullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unity User Manual}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual
+      \endverb
+    \endentry
+    \entry{website:ez2play-hard2master}{misc}{}
+      \list{publisher}{1}{%
+        {Nolan Bushnell}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labeltitlesource}{title}
+      \field{title}{Theorem: Easy to Learn, Difficult to Master}
+      \verb{urlraw}
+      \verb http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master
+      \endverb
+      \verb{url}
+      \verb http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master
+      \endverb
+    \endentry
+    \entry{website:brackeys-menu}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=871c36261666707c1a2cc02f81518dca}{%
+           family={Thirslund},
+           familyi={T\bibinitperiod},
+           given={Asbjørn},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{fullhash}{871c36261666707c1a2cc02f81518dca}
+      \strng{bibnamehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{authorbibnamehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{authornamehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{authorfullhash}{871c36261666707c1a2cc02f81518dca}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.youtube.com/playlist?list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0}}
+      \field{title}{Tower Defense Tutorial}
+    \endentry
+    \entry{website:vs}{misc}{}
+      \list{publisher}{1}{%
+        {Microsoft Corporation}%
+      }
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labeltitlesource}{title}
+      \field{title}{Visual Studio Community 2017}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.visualstudio.com/vs/community
+      \endverb
+      \verb{url}
+      \verb https://www.visualstudio.com/vs/community
+      \endverb
+    \endentry
+    \entry{website:wiki-dungeoncrawler}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Dungeon_crawl}}
+      \field{title}{Dungeon crawl}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
 
-\end{thebibliography}
