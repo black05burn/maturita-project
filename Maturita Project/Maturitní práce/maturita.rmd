@@ -157,7 +157,7 @@ Velikým důvodem pro výběr byla také dostupnost v jazyce C\#, což ne všech
 Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 @website:vs. Tento program vytvořil microsoft, proto má skvělou podporu jazyka C\#.
 
 ### Důvod pouzití
-
+Ve Visual Studiu jsme pracovali i v hodinách programování ve škole, takže jsem měl k programu velice blízko. Dalším důvodem bylo to, že Unity velice dobře pracuje s tímto programem. Nabízí snippets (CSNIPPETS), proto je mnohem jednodušší a rychlejší kód psát. Je tedy mnohem jednodušší soustředit se na to, co je důležité a né na pamatování si všech metod a tříd, které unity poskytuje.
 
 ### Výhody
 - Je zdarma pro osobní i komerční účely pro jedince
@@ -197,10 +197,21 @@ Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportova
 
 ## Nepřítel
 ## Cíl úrovní
+Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který právě otevřel. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
 
 \pagebreak
 
 # Problémy vývoje
+
+#Závěr
+S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytli. Dokázal jsem využít již naučené techniky a k nim přidat i nové věci.
+
+
+## Zhodnocení cílů
+Mnoho svých cílů jsem splnil přesně dle očekávání. Některé jsem musel upravit, aby pro hráče dávali větší smysl a hra byla hratelná. Zkušební verzi jsem poskytoval kamarádům, kteří mi poté poskytli odezvu. Díky tomu jsem například přidal FOG OF WAR (CITACE FOG OF WAR), aby hra nebyla tak jednoduchá.
+
+## Feedback???
+Hru možná budu sdílet na redditu
 
 \pagebreak
 <!-- CITACE  -->
