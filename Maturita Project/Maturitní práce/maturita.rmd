@@ -75,7 +75,6 @@ Podpis žáka: (podpis)
 
 \vspace{1.5cm}
 
-<<<<<<< HEAD
 Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
 
 \vspace{1.5cm}
@@ -85,17 +84,7 @@ Místo datum
 \vspace{2cm}
 
 David Beneš
-=======
-    Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  vedením  Mgr. Tomáše Miličky  a  uvedl  v seznamu  literatury  a  zdrojů veškerou  použitou  literaturu  a  další informační zdroje.
-    
-	\vspace{1.5cm}
-	
-    Místo datum
-	
-    \vspace{2cm}
-	
-    David Beneš
->>>>>>> c1c08118b0726763cb85146cc7045b93752ba4bd
+
     
 \newpage
 <!-- ANOTACE  -->
@@ -196,6 +185,8 @@ Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může 
 Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat byla proměná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
 
 ## Nepřítel
+
+
 ## Cíl úrovní
 Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který právě otevřel. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
 
@@ -212,9 +203,10 @@ Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kur
 
 ## Otáčení nepřátel
 
+\pagebreak
 
 # Závěr
-S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytli. Dokázal jsem využít již naučené techniky a k nim přidat i nové věci.
+S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytly. Dokázal jsem využít již naučené techniky a k nim se naučit nové.
 
 
 ## Zhodnocení cílů
