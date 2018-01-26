@@ -19,6 +19,33 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{website:ez2play-hard2master}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=847250c6a1a5a5fb63f2326f4b922ee4}{%
+           family={Bushnell},
+           familyi={B\bibinitperiod},
+           given={Nolan},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{847250c6a1a5a5fb63f2326f4b922ee4}
+      \strng{fullhash}{847250c6a1a5a5fb63f2326f4b922ee4}
+      \strng{bibnamehash}{847250c6a1a5a5fb63f2326f4b922ee4}
+      \strng{authorbibnamehash}{847250c6a1a5a5fb63f2326f4b922ee4}
+      \strng{authornamehash}{847250c6a1a5a5fb63f2326f4b922ee4}
+      \strng{authorfullhash}{847250c6a1a5a5fb63f2326f4b922ee4}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theorem: Easy to Learn, Difficult to Master}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master
+      \endverb
+      \verb{url}
+      \verb http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master
+      \endverb
+    \endentry
     \entry{website:unity-manual}{misc}{}
       \name{author}{1}{}{%
         {{hash=a392aef636dca7b17db698a1d42d6a22}{%
@@ -46,19 +73,139 @@
       \verb https://docs.unity3d.com/Manual
       \endverb
     \endentry
-    \entry{website:ez2play-hard2master}{misc}{}
-      \list{publisher}{1}{%
-        {Nolan Bushnell}%
+    \entry{website:vector3}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a392aef636dca7b17db698a1d42d6a22}{%
+           family={SF},
+           familyi={S\bibinitperiod},
+           given={Unity\bibnamedelima Technologies},
+           giveni={U\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
       }
-      \field{sortinit}{T}
-      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \strng{namehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{fullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{bibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorbibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authornamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorfullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Theorem: Easy to Learn, Difficult to Master}
+      \field{title}{Unity User Manual}
+      \field{year}{2018}
       \verb{urlraw}
-      \verb http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master
+      \verb https://docs.unity3d.com/ScriptReference/Vector3.html
       \endverb
       \verb{url}
-      \verb http://www.wolfsheadonline.com/bushnells-theorem-easy-to-learn-difficult-to-master
+      \verb https://docs.unity3d.com/ScriptReference/Vector3.html
+      \endverb
+    \endentry
+    \entry{website:quaternion}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a392aef636dca7b17db698a1d42d6a22}{%
+           family={SF},
+           familyi={S\bibinitperiod},
+           given={Unity\bibnamedelima Technologies},
+           giveni={U\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{fullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{bibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorbibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authornamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorfullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unity User Manual}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/ScriptReference/Quaternion.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/ScriptReference/Quaternion.html
+      \endverb
+    \endentry
+    \entry{website:eulerangles}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a392aef636dca7b17db698a1d42d6a22}{%
+           family={SF},
+           familyi={S\bibinitperiod},
+           given={Unity\bibnamedelima Technologies},
+           giveni={U\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{fullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{bibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorbibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authornamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorfullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unity User Manual}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/ScriptReference/Quaternion.Euler.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/ScriptReference/Quaternion.Euler.html
+      \endverb
+    \endentry
+    \entry{website:ray}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a392aef636dca7b17db698a1d42d6a22}{%
+           family={SF},
+           familyi={S\bibinitperiod},
+           given={Unity\bibnamedelima Technologies},
+           giveni={U\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{fullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{bibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorbibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authornamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorfullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unity User Manual}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/ScriptReference/Physics.Raycast.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/ScriptReference/Physics.Raycast.html
+      \endverb
+    \endentry
+    \entry{website:deltatime}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a392aef636dca7b17db698a1d42d6a22}{%
+           family={SF},
+           familyi={S\bibinitperiod},
+           given={Unity\bibnamedelima Technologies},
+           giveni={U\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{fullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{bibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorbibnamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authornamehash}{a392aef636dca7b17db698a1d42d6a22}
+      \strng{authorfullhash}{a392aef636dca7b17db698a1d42d6a22}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unity User Manual}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/ScriptReference/Time-deltaTime.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/ScriptReference/Time-deltaTime.html
       \endverb
     \endentry
     \entry{website:brackeys-menu}{misc}{}
@@ -79,8 +226,14 @@
       \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.youtube.com/playlist?list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0}}
       \field{title}{Tower Defense Tutorial}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.youtube.com/playlist?list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/playlist?list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0
+      \endverb
     \endentry
     \entry{website:vs}{misc}{}
       \list{publisher}{1}{%
@@ -114,8 +267,89 @@
       \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Dungeon_crawl}}
       \field{title}{Dungeon crawl}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Dungeon_crawl
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Dungeon_crawl
+      \endverb
+    \endentry
+    \entry{website:fogofwar}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fog of war}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Fog_of_war
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Fog_of_war
+      \endverb
+    \endentry
+    \entry{website:snippets}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Snippet (programming)}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Snippet_(programming)
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Snippet_(programming)
+      \endverb
+    \endentry
+    \entry{website:stealth}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stealth game}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Stealth_game
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Stealth_game
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
