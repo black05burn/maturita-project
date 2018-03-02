@@ -227,6 +227,8 @@ Nakonec nepřítel vystřelí, hráč umírá a musí restartovat úroveň.
 ### Cíl úrovní
 Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který právě otevřel. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
 
+![Úvodní úroveň](img/level01.png)
+
 ### Přechod do další úrovně
 Aby přechod do další úrovně vypadal pěkně, našel jsem si na Youtube návod na animace. Aby to udělalo fade effect, musel jsem vytvořit 2D plochu. Když hráč došel na konec úrovně, pomalu se přechází na tuto plochu a až po té se přepne úroveň. V C\# je přechod zajištěn změnou průhlednosti plochy v cyklu. Pomocí proměné DeltaTime se pak dá každý průchod cyklem spozdit o určitý čas.
 
@@ -243,6 +245,7 @@ Pro jednotlivá tlačítka v menu jsem musel vytvořit jednotlivé funkce v C\# 
 ### Zapauzování hry
 Zapauzování hry bylo jednodušší, než jsem ze začátku čekal. Unity totiž udržuje v promněné GameObject.activeSelf, jestli je daný objekt aktivní nebo ne. To jsem využil tak, že jsem si načetl objekt, na kterém je ckript nasazen a pojmenoval jsem si ho UI. Pomocí `UI.activeSelf` zjistil, jestli je menu aktivní nebo ne. Potom jsem při zmáčknutí Escape jen znegoval hodnotu activeSefl. Tím jsem měl zajištěno ukázání a schování pauzovacího menu. Poté jsem ještě potřeboval samotnou hru zmrazit. To jsem zařídil pomocí `Time.timeScale`. Tato proměnná udržuje, jak rychle běží čas ve hře. Základní hodnota je 1, pro zapauzování jsem ji změnil na 0 a naopak.
 
+![Pause menu](img/pause-menu.png)
 
 ![Teleportace postavy](img/player-blink.png)
 
