@@ -110,8 +110,8 @@ hra, csharp, unity, programování, visual studio
 
 \section*{Anotation}
 
-Project is aimed at programming in C\# language in game engine Unity. 
-Visual studio is used to edit scripts. Krita is used to make images for the UI. Everything else is done in Unity Editor, where every level and animation of characters is made.
+Graduation project is aimed at programming in C\# language in game engine Unity. This paper describes entire development of the game and every problems, which are related with it.
+Visual studio is used to edit scripts. Krita is used to make images for the UI. Everything else is done in Unity Editor, where every level and animation is made.
 
 **Key words**
 
@@ -214,14 +214,24 @@ Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může 
 Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat byla proměnná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
 
 ## Nepřítel
+Hned na začátku jsem věděl, že nepřítel nebude moct umřít. Tím se mi uvolnila práce na životech nepřítele. Aby hra neměla v sobě neměla RNG faktor (REFERENCE), nepřítel stále následuje dokolečka jednu cestu. Trasa je seskládána z několika bodů, na které musí nepřítel dojít. Jakmile k nim dojde, otočí se k dalšímu atd... 
+Ve skriptu jsem musel v poli uchovávat místo těchto bodů, opět jsem k tomu využil vektorů. Když jsem měl vektory uložené, mohl jsem využít funkcí unity a přesunout nepřítele k bodu. Aby to ovšem nevypadalo špatně, bylo nutné zařídit otáčení nepřítele k danému bodu. Naštěstí v knihovnách Unity jsou i goniometrické funkce, díky tomu jsem pomocí dvou vzdáleností, které bod svírají, mohl zjistit o kolik stupňů se nepřítel musí otočit.
+Když už byl nepřítel schopný chodit po trase, chtěl jsem z něj pro hráče udělat nějakou hrozbu. Rozhold jsem se mu přidat zbraň. Kvůli tomu jsem musel naznačit, kam nepřítel vidí. To jsem udělal pomocí světla, které jsem nasadil na nepřítele. V kódu jsem pak nastavil, jak daleko a jaký úhel může nepřítel vidět.
+Abych dal hráči najevo, že ho nepřítle spatřil, světlo mění barvy. Prvně jsem ale potřeboval zjistit, jestli hráč vůbec žije. Pokud žije a pokud vstopí do zorného pole nepřítele, světlo zčervená a nepřítel hráče zastřelí. Samozřejmě bylo nutné přidat nějakou časovou odchylku, aby hráč měl větší šanci utéct.
+Nakonec nepřítel vystřelí, hráč umírá a musí restartovat úroveň.
 
 
 
-## Cíl úrovní
+## Úrovně
+
+### Cíl úrovní
 Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který právě otevřel. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
 
 ### Přechod do další úrovně
 Aby přechod do další úrovně vypadal pěkně, našel jsem si na Youtube návod na animace. Aby to udělalo fade effect, musel jsem vytvořit 2D plochu. Když hráč došel na konec úrovně, pomalu se přechází na tuto plochu a až po té se přepne úroveň. V C\# je přechod zajištěn změnou průhlednosti plochy v cyklu. Pomocí proměné DeltaTime se pak dá každý průchod cyklem spozdit o určitý čas.
+
+### Otevírání a zavírání dveří
+Pro hezčí vzhled úrovní jsem přidal dveře. Když se k nim hráč přiblíží (vstoupí do jejich collideru) dveře se otevřou. Když se od nich vzdáli zase se zavřou.
 
 ## Menu
 Všechna grafika, která se v menu nachází byla vytvořena díky samotnému Unity Enginu. Podobně jako jsem udělal UI, jsem také udělal menu. Jediné co se změnilo je, že jsem přidal tlačítka, které mají nějakou funkci.
@@ -251,7 +261,15 @@ Jelikož jsem začátečník v programování a zároveň v enginu Unity, narazi
 Při pohybu jsem musel upravovat rychlost. Po té jsem narazil na problém při kolizích postavy a země či zdí. Postava stále propadávala. Zjistil jsem, že to bylo ve velikosti collideru země, o něco málo jsem o zvětšil a vše bylo v pořádku.
 Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kurzoru. Byl zde problém zjištění místa kurzoru. Ten jsem docela rychle vyřešil pomocí některých metod, které unity poskytuje. Po té se ale postava stále koukala do země, takže jsem se nemohl normálně pohybovat. Pomocí youtube videí jsem zjistil, že se dá nalézt kurzor elegantněji. To mi sice pomohlo, ale stále se postava dívala trošku jinam, než měla. Nakonec jsem to vyřešil přičtením této odchylky a vše funguje normálně.
 
-## Otáčení nepřátel
+## Nepřátelé
+Stejně jako u hráče bylo nutné nastavovat rychlost pohybu, stejně nutné ovšem byla i rychlost otáčení.
+S otáčením jsem narazil na několik problémů.
+Prvně se nepřítel otáčel nejdelší cestou. To se dalo vyřešit pomocí podmínky, která určovala, aby se otáčel o úhel ostrý.
+Dalším problémem bylo, že se nepřítel nedokázal 'dotočit'. Ve skutečnosti zbýval tak malý úhel, že se s tím unity nevypořádalo, a tak sebou nepřítel na místě škubal. Vyřešil jsem to podmínkou, která říkala, že se nepřítel přestane točit, když daný úhel bude velice malý.
+
+## Dveře
+Na začátkou jsem neměl tušení, jak zařídit průchod dveřmi. Na internetu jsem našel spoustu návodů, ale nic nebylo přesně jak bych si představoval. Otevírání jsem vyřešil pomocí animace. To bohužel nestačilo, protože jsem musel animaci nějak spustit. Zde nastal velký problém, protože jsem nedokázal zjistit, kdy se hráč ke dveřím přiblíží. Narazit do nich nemohl, protože by to nevypadalo dobře. Nakonec mě napadlo, že bych mohl zvětšit collider dveří, to sice fungovalo, ale animace byla příliž krátká. Díky tomu, že Unity dovoluje jednoduše animace vytvářet či upravovat, hned jsem to opravil.
+
 
 \pagebreak
 
