@@ -100,7 +100,6 @@ public class Player : MonoBehaviour {
 					{
 						StartCoroutine(Game.instance.ShowHideFinishText());
 					}
-					//GAME UI needed here!!!
 				}
 			}
 		}

@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
             if (invisible)
             {
-                GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 2f);
+                GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 3f);
             }
             else
             {
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
             //change color to "invisible"
             invisible = true;
             Player.isInvisible = true;
-            GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 2f);
+            GetComponent<Renderer>().material.color = new Color(playerColor.r, playerColor.g, playerColor.b, 1 / 3f);
             GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
 			//cooldown
