@@ -92,7 +92,7 @@ Prohlašuji,  že  jsem  maturitní  práci  vypracoval  samostatně  pod  veden
 
 \vspace{1.5cm}
 
-Místo datum
+Znojmo 6.4.2018
 
 \vspace{2cm}
 
@@ -108,7 +108,7 @@ Maturitní práce se zaměřuje na programování v jazyce C\# v herním enginu 
 
 hra, csharp, unity, programování, visual studio
 
-\section*{Anotation}
+\section*{Abstract}
 
 Graduation project is aimed at programming in C\# language in game engine Unity. This paper describes entire development of the game and every problems, which are related with it.
 Visual studio is used to edit scripts. Krita is used to make images for the UI. Everything else is done in Unity Editor, where every level and animation is made.
@@ -130,10 +130,10 @@ game, csharp, unity, programming, visual studio
 
 
 # Úvod  
- Téma jsem si vybral, protože mě vždy zajímalo jak se hry vyvíjí. Dále jsem chtěl vědět, jestli vůbec takovou hru dokážu naprogramovat. Také jsem zastáncem názoru, že programování se dá naučit jedině praxí.
+ Téma jsem si vybral, protože mě vždy zajímalo, jak se hry vyvíjí. Dále jsem chtěl vědět, jestli vůbec takovou hru dokážu naprogramovat. Také jsem zastáncem názoru, že programování se dá naučit jedině praxí.
 
 ## Vymezení cílů
-Mým hlavním cílem je naprogramovat hru pomocí jazyka C\#. Neměla by být moc obtížná na naučení, ale měla by být těžká na pokoření -@website:ez2play-hard2master. Game design by měl být jednoduchý a přehledný, ať se hráč jednoduše vyzná kde se právě nachází. Hra by se měla zaměřovat na schovávání se před nepřáteli, a ne na jejich zabíjení.
+Mým hlavním cílem je naprogramovat hru pomocí jazyka C\#. Neměla by být moc obtížná na naučení, ale měla by být těžká na pokoření -@website:ez2play-hard2master. Game design by měl být jednoduchý a přehledný, ať se hráč jednoduše vyzná, kde se právě nachází. Hra by se měla zaměřovat na schovávání se před nepřáteli, a ne na jejich zabíjení.
 
 
 \pagebreak
@@ -190,7 +190,7 @@ Ve Visual Studiu jsme pracovali i v hodinách programování ve škole, takže j
 
 # Průběh vývoje
 ## Výběr žánru
-Na začátku jsem musel vymyslet v jakém duchu budu hru vyvíjet. Jelikož mám velice rád stealth hry -@website:stealth, rozhodl jsem se ji vytvořit v tomto duchu. Dále jsem musel vymyslet, jaký styl úrovní budu vytvářet. Jelikož jsem dlouho měl jen slabý počítač, mohl jsem hrát pouze nenáročné hry většinou indie vývojářů. Mnoho z nich bylo tzv. dungeoncrawler -@website:wiki-dungeoncrawler, proto jsem se rozhodl jít právě touto cestou. Nechtěl jsem, aby hráč mohl zabíjet neviné strážce, a tak ve hře nemá k dispozici žádné zbraně. Pro záživnější průběh jsem se rozhodl zahrnout do hry nějaké superschopnosti, které by zbraně nahradili.
+Na začátku jsem musel vymyslet, v jakém duchu budu hru vyvíjet. Jelikož mám velice rád stealth hry -@website:stealth, rozhodl jsem se ji vytvořit v tomto duchu. Dále jsem musel vymyslet, jaký styl úrovní budu vytvářet. Jelikož jsem dlouho měl jen slabý počítač, mohl jsem hrát pouze nenáročné hry většinou indie vývojářů. Mnoho z nich bylo tzv. dungeoncrawler -@website:wiki-dungeoncrawler, proto jsem se rozhodl jít právě touto cestou. Nechtěl jsem, aby hráč mohl zabíjet nevinné strážce, a tak ve hře nemá k dispozici žádné zbraně. Pro záživnější průběh jsem se rozhodl zahrnout do hry nějaké superschopnosti, které by zbraně nahradili.
 
 ## Ovládání postavy
 
@@ -198,26 +198,26 @@ Hráč ovládá postavu pomocí základních WASD tlačítek. Pomocí myši mí�
 
 
 ## Schopnosti
-Při výběru schopností jsem se nechal inspirovat ze stealth her a moba her. Hlavně pak Dishonored a Dota2.
+Při výběru schopností jsem se nechal inspirovat ze stealth her a moba her. Hlavně pak Dishonored (http://store.steampowered.com/app/217980/Dishonored/) a Dota2 (http://store.steampowered.com/app/570/Dota_2/).
 
 ### Blink
 Blink je teleportace na krátkou vzdálenost. Pomáhá hráči k rychlému přesunu. 
-Prvně jsem se rozhodl vytvořit vizuální zobrazení pro hráče. Vytvořil jsem čáru, které začala v postavě a končila na kurzoru hráče (pro získání kurzoru jsem využil stejný postup jako při otáčení postavy). Na konci čáry jsem přidal kostku, aby hráč věděl, kam se přesune. Poté jsem řešil maximální vzdálenost teleportu. Vytvořil jsem si proměnou, která uchovávala desetinné číslo, které určuje maximální vzdálenost. Pomocí IF podmínky jsem zjistil, jestli vzdálenost postavy od konce čáry je delší než je tato proměnná. Pokud ano zkrátím čáru na maximální vzdálenost ve směru kurzoru. Poté jsem musel zabránit teleportaci skrz zdi. Prvně jsem zjistil, jestli je na konci čáry zeď pomocí Physics.Raycast -@website:ray Pokud ano, tak čáru zkrátil na vzdálenost hráče od této zdi. Nakonec jsem musel vyřešit samotný teleport. To bylo velice jednoduché, protože stačilo nastavit pozici postavy na pozici, která je na konci čáry.
+Prvně jsem se rozhodl vytvořit vizuální zobrazení pro hráče. Vytvořil jsem čáru, které začala v postavě a končila na kurzoru hráče (pro získání kurzoru jsem využil stejný postup jako při otáčení postavy). Na konci čáry jsem přidal kostku, aby hráč věděl, kam se přesune. Poté jsem řešil maximální vzdálenost teleportu. Vytvořil jsem si proměnou, která uchovávala desetinné číslo, které určuje maximální vzdálenost. Pomocí IF podmínky jsem zjistil, jestli vzdálenost postavy od konce čáry je delší, než je tato proměnná. Pokud ano zkrátím čáru na maximální vzdálenost ve směru kurzoru. Poté jsem musel zabránit teleportaci skrz zdi. Prvně jsem zjistil, jestli je na konci čáry zeď pomocí Physics.Raycast -@website:ray Pokud ano, tak čáru zkrátil na vzdálenost hráče od této zdi. Nakonec jsem musel vyřešit samotný teleport. To bylo velice jednoduché, protože stačilo nastavit pozici postavy na pozici, která je na konci čáry.
 
 
 ### Neviditelnost
 Pro neviditelnost jsem použil globální proměnnou, kterou jsem si vytvořil. Tu jsem pak předával nepříteli, aby "nevnímal" hráče. Těžší bylo zajistit, aby neviditelnost trvala nějakou dobu a pak se hráč opět zviditelni. 
-Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může být hráč neviditelný. Každým průchodem cyklu jsem od této proměnné odečetl sekundu pomocí Time.Deltatime -@website:deltatime Dokud byla proměnná větší jak 0, tak byl hráč neviditelný. Aby hráč věděl, kdy je neviditelný musel jsem změnit barvu postavy. Prvně jsem získal materiál postavy a pak nastavil průhlednost nastavil na 1/3. Až se hráč opět zviditelnil, nastavil jsem zpět hodnotu 1.
+Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může být hráč neviditelný. Každým průchodem cyklu jsem od této proměnné odečetl sekundu pomocí Time.Deltatime -@website:deltatime Dokud byla proměnná větší jak 0, tak byl hráč neviditelný. Aby hráč věděl, kdy je neviditelný, musel jsem změnit barvu postavy. Prvně jsem získal materiál postavy, a pak nastavil průhlednost na 1/3. Až se hráč opět zviditelnil, nastavil jsem zpět hodnotu 1.
 
 
 ### Cooldown
-Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat byla proměnná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
+Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat, musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat, byla proměnná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
 
 ## Nepřítel
-Hned na začátku jsem věděl, že nepřítel nebude moct umřít. Tím se mi uvolnila práce na životech nepřítele. Aby hra neměla v sobě neměla RNG faktor (REFERENCE), nepřítel stále následuje dokolečka jednu cestu. Trasa je seskládána z několika bodů, na které musí nepřítel dojít. Jakmile k nim dojde, otočí se k dalšímu atd... 
-Ve skriptu jsem musel v poli uchovávat místo těchto bodů, opět jsem k tomu využil vektorů. Když jsem měl vektory uložené, mohl jsem využít funkcí unity a přesunout nepřítele k bodu. Aby to ovšem nevypadalo špatně, bylo nutné zařídit otáčení nepřítele k danému bodu. Naštěstí v knihovnách Unity jsou i goniometrické funkce, díky tomu jsem pomocí dvou vzdáleností, které bod svírají, mohl zjistit o kolik stupňů se nepřítel musí otočit.
-Když už byl nepřítel schopný chodit po trase, chtěl jsem z něj pro hráče udělat nějakou hrozbu. Rozhold jsem se mu přidat zbraň. Kvůli tomu jsem musel naznačit, kam nepřítel vidí. To jsem udělal pomocí světla, které jsem nasadil na nepřítele. V kódu jsem pak nastavil, jak daleko a jaký úhel může nepřítel vidět.
-Abych dal hráči najevo, že ho nepřítle spatřil, světlo mění barvy. Prvně jsem ale potřeboval zjistit, jestli hráč vůbec žije. Pokud žije a pokud vstopí do zorného pole nepřítele, světlo zčervená a nepřítel hráče zastřelí. Samozřejmě bylo nutné přidat nějakou časovou odchylku, aby hráč měl větší šanci utéct.
+Hned na začátku jsem věděl, že nepřítel nebude moct umřít. Tím se mi uvolnila práce na životech nepřítele. Aby hra v sobě neměla RNG faktor (https://www.makeuseof.com/tag/lesson-gamers-rng/ ), nepřítel stále následuje dokolečka jednu cestu. Trasa je seskládána z několika bodů, na které musí nepřítel dojít. Jakmile k nim dojde, otočí se k dalšímu atd.
+Ve skriptu jsem musel v poli uchovávat místo těchto bodů, opět jsem k tomu využil vektorů. Když jsem měl vektory uložené, mohl jsem využít funkcí unity a přesunout nepřítele k bodu. Aby to ovšem nevypadalo špatně, bylo nutné zařídit otáčení nepřítele k danému bodu. Naštěstí v knihovnách Unity jsou i goniometrické funkce, díky tomu jsem pomocí dvou vzdáleností, které bod svírají, mohl zjistit, o kolik stupňů se nepřítel musí otočit.
+Když už byl nepřítel schopný chodit po trase, chtěl jsem z něj pro hráče udělat nějakou hrozbu. Rozhodl jsem se mu přidat zbraň. Kvůli tomu jsem musel naznačit, kam nepřítel vidí. To jsem udělal pomocí světla, které jsem nasadil na nepřítele. V kódu jsem pak nastavil, jak daleko a jaký úhel může nepřítel vidět.
+Abych dal hráči najevo, že ho nepřítel spatřil, světlo mění barvy. Prvně jsem ale potřeboval zjistit, jestli hráč vůbec žije. Pokud žije a pokud vstoupí do zorného pole nepřítele, světlo zčervená a nepřítel hráče zastřelí. Samozřejmě bylo nutné přidat nějakou časovou odchylku, aby hráč měl větší šanci utéct.
 Nakonec nepřítel vystřelí, hráč umírá a musí restartovat úroveň.
 
 
@@ -230,20 +230,20 @@ Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni ro
 ![Úvodní úroveň](img/level01.png)
 
 ### Přechod do další úrovně
-Aby přechod do další úrovně vypadal pěkně, našel jsem si na Youtube návod na animace. Aby to udělalo fade effect, musel jsem vytvořit 2D plochu. Když hráč došel na konec úrovně, pomalu se přechází na tuto plochu a až po té se přepne úroveň. V C\# je přechod zajištěn změnou průhlednosti plochy v cyklu. Pomocí proměné DeltaTime se pak dá každý průchod cyklem spozdit o určitý čas.
+Aby přechod do další úrovně vypadal pěkně, našel jsem si na Youtube návod na animace. Aby to udělalo fade effect, musel jsem vytvořit 2D plochu. Když hráč došel na konec úrovně, pomalu se přechází na tuto plochu a až po té se přepne úroveň. V C\# je přechod zajištěn změnou průhlednosti plochy v cyklu. Pomocí proměnné DeltaTime se pak dá každý průchod cyklem zpozdit o určitý čas.
 
 ### Otevírání a zavírání dveří
-Pro hezčí vzhled úrovní jsem přidal dveře. Když se k nim hráč přiblíží (vstoupí do jejich collideru) dveře se otevřou. Když se od nich vzdáli zase se zavřou.
+Pro hezčí vzhled úrovní jsem přidal dveře. Když se k nim hráč přiblíží (vstoupí do jejich collideru) dveře se otevřou. Když se od nich vzdálí, zase se zavřou.
 
 ## Menu
-Všechna grafika, která se v menu nachází byla vytvořena díky samotnému Unity Enginu. Podobně jako jsem udělal UI, jsem také udělal menu. Jediné co se změnilo je, že jsem přidal tlačítka, které mají nějakou funkci.
+Všechna grafika, která se v menu nachází, byla vytvořena díky samotnému Unity Enginu. Podobně jako jsem udělal UI, jsem také udělal menu. Jediné změna spočívá v přidání tlačítek, které mají nějakou funkci.
 
 ### Základní menu
 Abych mohl vytvořit menu, musel jsem zjistit, jak v Unity funguje 2D grafika.
-Pro jednotlivá tlačítka v menu jsem musel vytvořit jednotlivé funkce v C\# skriptu. Pro přechod do dalšího menu se jednoduše načte jiná Unity scéna. Každá scéna má své jméno a podle toho se pak dá v C\# zavolat.kk
+Pro jednotlivá tlačítka v menu jsem musel vytvořit jednotlivé funkce v C\# skriptu. Pro přechod do dalšího menu se jednoduše načte jiná Unity scéna. Každá scéna má své jméno a podle toho se pak dá v C\# zavolat.
 
 ### Zapauzování hry
-Zapauzování hry bylo jednodušší, než jsem ze začátku čekal. Unity totiž udržuje v promněné GameObject.activeSelf, jestli je daný objekt aktivní nebo ne. To jsem využil tak, že jsem si načetl objekt, na kterém je ckript nasazen a pojmenoval jsem si ho UI. Pomocí `UI.activeSelf` zjistil, jestli je menu aktivní nebo ne. Potom jsem při zmáčknutí Escape jen znegoval hodnotu activeSefl. Tím jsem měl zajištěno ukázání a schování pauzovacího menu. Poté jsem ještě potřeboval samotnou hru zmrazit. To jsem zařídil pomocí `Time.timeScale`. Tato proměnná udržuje, jak rychle běží čas ve hře. Základní hodnota je 1, pro zapauzování jsem ji změnil na 0 a naopak.
+Zapauzování hry bylo jednodušší, než jsem ze začátku čekal. Unity totiž udržuje v proměnné GameObject.activeSelf, jestli je daný objekt aktivní nebo ne. To jsem využil tak, že jsem si načetl objekt, na kterém je skript nasazen, a pojmenoval jsem si ho UI. Pomocí `UI.activeSelf` zjistil, jestli je menu aktivní nebo ne. Potom jsem při zmáčknutí Escape jen znegoval hodnotu activeSefl. Tím jsem měl zajištěno ukázání a schování pauzovacího menu. Poté jsem ještě potřeboval samotnou hru zmrazit. To jsem zařídil pomocí `Time.timeScale`. Tato proměnná udržuje, jak rychle běží čas ve hře. Základní hodnota je 1, pro zapauzování jsem ji změnil na 0 a naopak.
 
 ![Pause menu](img/pause-menu.png)
 
@@ -262,7 +262,7 @@ Jelikož jsem začátečník v programování a zároveň v enginu Unity, narazi
 
 ## Pohyb a rotace postavy
 Při pohybu jsem musel upravovat rychlost. Po té jsem narazil na problém při kolizích postavy a země či zdí. Postava stále propadávala. Zjistil jsem, že to bylo ve velikosti collideru země, o něco málo jsem o zvětšil a vše bylo v pořádku.
-Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kurzoru. Byl zde problém zjištění místa kurzoru. Ten jsem docela rychle vyřešil pomocí některých metod, které unity poskytuje. Po té se ale postava stále koukala do země, takže jsem se nemohl normálně pohybovat. Pomocí youtube videí jsem zjistil, že se dá nalézt kurzor elegantněji. To mi sice pomohlo, ale stále se postava dívala trošku jinam, než měla. Nakonec jsem to vyřešil přičtením této odchylky a vše funguje normálně.
+Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kurzoru. Byl zde problém zjištění místa kurzoru. Ten jsem docela rychle vyřešil pomocí některých metod, které unity poskytuje. Po té se ale postava stále koukala do země, takže jsem se nemohl normálně pohybovat. Pomocí internetových zdrojů jsem zjistil, že se dá nalézt kurzor elegantněji. To mi sice pomohlo, ale stále se postava dívala trošku jinam, než měla. Nakonec jsem to vyřešil přičtením této odchylky a vše funguje normálně.
 
 ## Nepřátelé
 Stejně jako u hráče bylo nutné nastavovat rychlost pohybu, stejně nutné ovšem byla i rychlost otáčení.
@@ -271,7 +271,7 @@ Prvně se nepřítel otáčel nejdelší cestou. To se dalo vyřešit pomocí po
 Dalším problémem bylo, že se nepřítel nedokázal 'dotočit'. Ve skutečnosti zbýval tak malý úhel, že se s tím unity nevypořádalo, a tak sebou nepřítel na místě škubal. Vyřešil jsem to podmínkou, která říkala, že se nepřítel přestane točit, když daný úhel bude velice malý.
 
 ## Dveře
-Na začátkou jsem neměl tušení, jak zařídit průchod dveřmi. Na internetu jsem našel spoustu návodů, ale nic nebylo přesně jak bych si představoval. Otevírání jsem vyřešil pomocí animace. To bohužel nestačilo, protože jsem musel animaci nějak spustit. Zde nastal velký problém, protože jsem nedokázal zjistit, kdy se hráč ke dveřím přiblíží. Narazit do nich nemohl, protože by to nevypadalo dobře. Nakonec mě napadlo, že bych mohl zvětšit collider dveří, to sice fungovalo, ale animace byla příliž krátká. Díky tomu, že Unity dovoluje jednoduše animace vytvářet či upravovat, hned jsem to opravil.
+Na začátku jsem neměl tušení, jak zařídit průchod dveřmi. Na internetu jsem našel spoustu návodů, ale nic nebylo přesně, jak bych si představoval. Otevírání jsem vyřešil pomocí animace. To bohužel nestačilo, protože jsem musel animaci nějak spustit. Zde nastal velký problém, protože jsem nedokázal zjistit, kdy se hráč ke dveřím přiblíží. Narazit do nich nemohl, protože by to nevypadalo dobře. Nakonec mě napadlo, že bych mohl zvětšit collider dveří, to sice fungovalo, ale animace byla příliš krátká. Díky tomu, že Unity dovoluje jednoduše animace vytvářet či upravovat, hned jsem to opravil.
 
 
 \pagebreak
