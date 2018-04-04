@@ -168,7 +168,7 @@ Velikým důvodem pro výběr byla také dostupnost v jazyce C\#, což ne všech
 ## Visual Studio
 
 ### Představení
-Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 -@website:vs. Tento program vytvořil microsoft, proto má skvělou podporu jazyka C\#.
+Pro upravování C\# skriptů jsem použil program Visual Studio Community 2017 -@website:vs. Tento program vytvořil Microsoft, proto má skvělou podporu jazyka C\#.
 
 ### Důvod použití
 Ve Visual Studiu jsme pracovali i v hodinách programování ve škole, takže jsem měl k programu velice blízko. Dalším důvodem bylo to, že Unity velice dobře pracuje s tímto programem. Nabízí snippets -@website:snippets, proto je mnohem jednodušší a rychlejší kód psát. Je tedy mnohem jednodušší soustředit se na to, co je důležité a ne na pamatování si všech metod a tříd, které unity poskytuje.
@@ -179,7 +179,7 @@ Ve Visual Studiu jsme pracovali i v hodinách programování ve škole, takže j
 - Jednoduché debugování
 
 ### Nevýhody
-- Není multiplatformní (neexistuje verze pro linux)
+- Není multiplatformní (neexistuje verze pro Linux)
 
 ### Alternativy
 - monodevelop
@@ -194,7 +194,7 @@ Na začátku jsem musel vymyslet, v jakém duchu budu hru vyvíjet. Jelikož má
 
 ## Ovládání postavy
 
-Hráč ovládá postavu pomocí základních WASD tlačítek. Pomocí myši míří a rozhlíží se po úrovni. Pro pohyb jsem využil Vector3 -@website:vector3 a to tak, že jsem k pozici postavy přičetl jednotkový vektor a vynásobil rychlostí, kterou jsem si vybral. Pro otáčení hráče ke kurzoru jsem prvně musel zjistit, kde je kurzor. To jsem udělal pomocí kamery, která je na scéně. Ta dokáže vypočítat, kam na jaký bod kurzor míří. Aby se postava nedívala do země, přičetl jsem výšku postavy k tomuto bodu. Pro samotné otočení postavy k bodu jsem musel využít quaternion -@website:quaternion Ten sice zjistí, jak daleko se musí postava otočit, ale poté je nutno ho převést na tzv. eulerAngles -@website:eulerangles Díky tomu pak víme, o kolik se na jednotlivých osách postava musí natočit.
+Hráč ovládá postavu pomocí základních pohybových tlačítek. Pomocí myši míří a rozhlíží se po úrovni. Pro pohyb jsem využil Vector3 -@website:vector3 a to tak, že jsem k pozici postavy přičetl jednotkový vektor a vynásobil rychlostí, kterou jsem si vybral. Pro otáčení hráče ke kurzoru jsem prvně musel zjistit, kde je kurzor. To jsem udělal pomocí kamery, která je na scéně. Ta dokáže vypočítat, na jaký bod kurzor míří. Aby se postava nedívala do země, přičetl jsem výšku postavy k tomuto bodu. Pro samotné otočení postavy k bodu jsem musel využít quaternion -@website:quaternion Ten sice zjistí, jak daleko se musí postava otočit, ale poté je nutno ho převést na tzv. eulerAngles -@website:eulerangles Díky tomu pak víme, o kolik se na jednotlivých osách postava musí natočit.
 
 
 ## Schopnosti
@@ -202,19 +202,19 @@ Při výběru schopností jsem se nechal inspirovat ze stealth her a moba her. H
 
 ### Blink
 Blink je teleportace na krátkou vzdálenost. Pomáhá hráči k rychlému přesunu. 
-Prvně jsem se rozhodl vytvořit vizuální zobrazení pro hráče. Vytvořil jsem čáru, které začala v postavě a končila na kurzoru hráče (pro získání kurzoru jsem využil stejný postup jako při otáčení postavy). Na konci čáry jsem přidal kostku, aby hráč věděl, kam se přesune. Poté jsem řešil maximální vzdálenost teleportu. Vytvořil jsem si proměnou, která uchovávala desetinné číslo, které určuje maximální vzdálenost. Pomocí IF podmínky jsem zjistil, jestli vzdálenost postavy od konce čáry je delší, než je tato proměnná. Pokud ano zkrátím čáru na maximální vzdálenost ve směru kurzoru. Poté jsem musel zabránit teleportaci skrz zdi. Prvně jsem zjistil, jestli je na konci čáry zeď pomocí Physics.Raycast -@website:ray Pokud ano, tak čáru zkrátil na vzdálenost hráče od této zdi. Nakonec jsem musel vyřešit samotný teleport. To bylo velice jednoduché, protože stačilo nastavit pozici postavy na pozici, která je na konci čáry.
+Prvně jsem se rozhodl vytvořit vizuální zobrazení pro hráče. Vytvořil jsem čáru, které začala v postavě a končila na kurzoru hráče (pro získání kurzoru jsem využil stejný postup jako při otáčení postavy). Na konci čáry jsem přidal kostku, aby hráč věděl, kam se přesune. Poté jsem řešil maximální vzdálenost teleportu. Vytvořil jsem si proměnou, která uchovávala desetinné číslo, které určuje maximální vzdálenost. Pomocí IF podmínky jsem zjistil, jestli vzdálenost postavy od konce čáry je delší, než je tato proměnná. Pokud ano zkrátím čáru na maximální vzdálenost ve směru kurzoru. Poté jsem musel zabránit teleportaci skrz zdi. Prvně jsem zjistil, jestli je na konci čáry zeď pomocí funkce Physics.Raycast -@website:ray Pokud ano, tak čáru zkrátil na vzdálenost hráče od této zdi. Nakonec jsem musel vyřešit samotný teleport. To bylo velice jednoduché, protože stačilo nastavit pozici postavy na pozici, která je na konci čáry.
 
 
 ### Neviditelnost
-Pro neviditelnost jsem použil globální proměnnou, kterou jsem si vytvořil. Tu jsem pak předával nepříteli, aby "nevnímal" hráče. Těžší bylo zajistit, aby neviditelnost trvala nějakou dobu a pak se hráč opět zviditelni. 
-Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může být hráč neviditelný. Každým průchodem cyklu jsem od této proměnné odečetl sekundu pomocí Time.Deltatime -@website:deltatime Dokud byla proměnná větší jak 0, tak byl hráč neviditelný. Aby hráč věděl, kdy je neviditelný, musel jsem změnit barvu postavy. Prvně jsem získal materiál postavy, a pak nastavil průhlednost na 1/3. Až se hráč opět zviditelnil, nastavil jsem zpět hodnotu 1.
+Pro neviditelnost jsem použil globální proměnnou, kterou jsem si vytvořil. Tu jsem pak předával nepříteli, aby nevnímal hráče. Těžší bylo zajistit, aby neviditelnost trvala nějakou dobu a pak se hráč opět zviditelni. 
+Vytvořil jsem while cyklus a proměnou, která uchovávala čas, který může být hráč neviditelný. Každým průchodem cyklu jsem od této proměnné odečetl sekundu pomocí Time.Deltatime -@website:deltatime Dokud byla proměnná větší jak 0, tak byl hráč neviditelný. Aby hráč věděl, kdy je neviditelný, musel jsem změnit barvu postavy. Prvně jsem získal materiál postavy, a pak nastavil průhlednost na 1/3. Až se hráč opět zviditelnil, vrátil jsem hodnotu zpět na 1.
 
 
 ### Cooldown
-Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat, musel jsem vytvořit cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat, byla proměnná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do UI.
+Aby hráč nemohl být neviditelný donekonečna, a nemohl se stále teleportovat, musel jsem vytvořit prodlevu mezi jednotlivým použitím schopnisto - cooldown. Pro cooldown jsem využil podobný cyklus jako pro neviditelnost. Jediné co jsem musel přidat, byla proměnná, která uchovává, jestli hráč muže schopnost použít. Před cyklem jsem ji nastavil na false a po cyklu opět na true. Aby šlo vidět, kolik času zbývá, rozhodl jsem se ho zakomponovat do uživatelského rozhraní.
 
 ## Nepřítel
-Hned na začátku jsem věděl, že nepřítel nebude moct umřít. Tím se mi uvolnila práce na životech nepřítele. Aby hra v sobě neměla RNG faktor (https://www.makeuseof.com/tag/lesson-gamers-rng/ ), nepřítel stále následuje dokolečka jednu cestu. Trasa je seskládána z několika bodů, na které musí nepřítel dojít. Jakmile k nim dojde, otočí se k dalšímu atd.
+Hned na začátku jsem věděl, že nepřítel nebude umírat. Tím se mi uvolnila práce na životech nepřítele. Aby hra v sobě neměla RNG faktor (https://www.makeuseof.com/tag/lesson-gamers-rng/ ), nepřítel stále následuje dokolečka jednu cestu. Trasa je seskládána z několika bodů, na které musí nepřítel dojít. Jakmile k nim dojde, otočí se k dalšímu atd.
 Ve skriptu jsem musel v poli uchovávat místo těchto bodů, opět jsem k tomu využil vektorů. Když jsem měl vektory uložené, mohl jsem využít funkcí unity a přesunout nepřítele k bodu. Aby to ovšem nevypadalo špatně, bylo nutné zařídit otáčení nepřítele k danému bodu. Naštěstí v knihovnách Unity jsou i goniometrické funkce, díky tomu jsem pomocí dvou vzdáleností, které bod svírají, mohl zjistit, o kolik stupňů se nepřítel musí otočit.
 Když už byl nepřítel schopný chodit po trase, chtěl jsem z něj pro hráče udělat nějakou hrozbu. Rozhodl jsem se mu přidat zbraň. Kvůli tomu jsem musel naznačit, kam nepřítel vidí. To jsem udělal pomocí světla, které jsem nasadil na nepřítele. V kódu jsem pak nastavil, jak daleko a jaký úhel může nepřítel vidět.
 Abych dal hráči najevo, že ho nepřítel spatřil, světlo mění barvy. Prvně jsem ale potřeboval zjistit, jestli hráč vůbec žije. Pokud žije a pokud vstoupí do zorného pole nepřítele, světlo zčervená a nepřítel hráče zastřelí. Samozřejmě bylo nutné přidat nějakou časovou odchylku, aby hráč měl větší šanci utéct.
@@ -225,12 +225,12 @@ Nakonec nepřítel vystřelí, hráč umírá a musí restartovat úroveň.
 ## Úrovně
 
 ### Cíl úrovní
-Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který právě otevřel. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
+Hlavní hráčův úkol je posbírat všechny klíče, které jsou po úrovni rozmístění. Při tom se musí schovávat před zrakem nepřátel. Sebrání všech klíčů však není konec, hráč se stále musí dostat do cíle, který se právě zpřístupnil. Jakmile hráče nepřítel spatří, zastřelí ho a tím se úroveň restartuje.  
 
 ![Úvodní úroveň](img/level01.png)
 
 ### Přechod do další úrovně
-Aby přechod do další úrovně vypadal pěkně, našel jsem si na Youtube návod na animace. Aby to udělalo fade effect, musel jsem vytvořit 2D plochu. Když hráč došel na konec úrovně, pomalu se přechází na tuto plochu a až po té se přepne úroveň. V C\# je přechod zajištěn změnou průhlednosti plochy v cyklu. Pomocí proměnné DeltaTime se pak dá každý průchod cyklem zpozdit o určitý čas.
+Aby přechod do další úrovně vypadal pěkně, našel jsem si na Youtube návod na animace. Pro použití fade effectu, jsem musel vytvořit 2D plochu. Když hráč došel na konec úrovně, pomalu se přechází na tuto plochu a až po té se přepne úroveň. V C\# je přechod zajištěn změnou průhlednosti plochy v cyklu. Pomocí proměnné DeltaTime se pak dá každý průchod cyklem zpozdit o určitý čas.
 
 ### Otevírání a zavírání dveří
 Pro hezčí vzhled úrovní jsem přidal dveře. Když se k nim hráč přiblíží (vstoupí do jejich collideru) dveře se otevřou. Když se od nich vzdálí, zase se zavřou.
@@ -268,7 +268,7 @@ Při rotaci to ovšem bylo horší. Chtěl jsem, aby se postava otáčela ke kur
 Stejně jako u hráče bylo nutné nastavovat rychlost pohybu, stejně nutné ovšem byla i rychlost otáčení.
 S otáčením jsem narazil na několik problémů.
 Prvně se nepřítel otáčel nejdelší cestou. To se dalo vyřešit pomocí podmínky, která určovala, aby se otáčel o úhel ostrý.
-Dalším problémem bylo, že se nepřítel nedokázal 'dotočit'. Ve skutečnosti zbýval tak malý úhel, že se s tím unity nevypořádalo, a tak sebou nepřítel na místě škubal. Vyřešil jsem to podmínkou, která říkala, že se nepřítel přestane točit, když daný úhel bude velice malý.
+Dalším problémem bylo, že se nepřítel nedokázal dotočit do správné pozice. Ve skutečnosti zbýval tak malý úhel, že se s tím Unity nevypořádalo, a tak sebou nepřítel na místě škubal. Vyřešil jsem to podmínkou, která říkala, že se nepřítel přestane točit, když daný úhel bude velice malý.
 
 ## Dveře
 Na začátku jsem neměl tušení, jak zařídit průchod dveřmi. Na internetu jsem našel spoustu návodů, ale nic nebylo přesně, jak bych si představoval. Otevírání jsem vyřešil pomocí animace. To bohužel nestačilo, protože jsem musel animaci nějak spustit. Zde nastal velký problém, protože jsem nedokázal zjistit, kdy se hráč ke dveřím přiblíží. Narazit do nich nemohl, protože by to nevypadalo dobře. Nakonec mě napadlo, že bych mohl zvětšit collider dveří, to sice fungovalo, ale animace byla příliš krátká. Díky tomu, že Unity dovoluje jednoduše animace vytvářet či upravovat, hned jsem to opravil.
@@ -277,13 +277,13 @@ Na začátku jsem neměl tušení, jak zařídit průchod dveřmi. Na internetu 
 \pagebreak
 
 # Závěr
-S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytly. Dokázal jsem využít již naučené techniky a k nim se naučit nové.
+S hrou jsem nadmíru spokojen. Získal jsem mnoho programovacích zkušeností, které by se mi jinak nenaskytly. Dokázal jsem využít základní principy programování, které jsem se naučil ve škole a k tomu jsem si osvojil nové schopnosti.
 
 
 ## Zhodnocení cílů
 Mnoho svých cílů jsem splnil přesně dle očekávání. Některé jsem musel upravit, aby pro hráče dávali větší smysl a hra byla hratelná. Zkušební verzi jsem poskytoval kamarádům, kteří mi poté poskytli odezvu. Díky tomu jsem například přidal FOG OF WAR -@website:fogofwar aby hra nebyla tak jednoduchá.
 
-## Feedback???
+## Feedback
 Hru možná budu sdílet na redditu
 
 \pagebreak
