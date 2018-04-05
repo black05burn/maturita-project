@@ -208,6 +208,60 @@
       \verb https://docs.unity3d.com/ScriptReference/Time-deltaTime.html
       \endverb
     \endentry
+    \entry{website:rng}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8cc5c9d2052bf88ae186fb6d51d7325f}{%
+           family={Snyder},
+           familyi={S\bibinitperiod},
+           given={Craig},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{8cc5c9d2052bf88ae186fb6d51d7325f}
+      \strng{fullhash}{8cc5c9d2052bf88ae186fb6d51d7325f}
+      \strng{bibnamehash}{8cc5c9d2052bf88ae186fb6d51d7325f}
+      \strng{authorbibnamehash}{8cc5c9d2052bf88ae186fb6d51d7325f}
+      \strng{authornamehash}{8cc5c9d2052bf88ae186fb6d51d7325f}
+      \strng{authorfullhash}{8cc5c9d2052bf88ae186fb6d51d7325f}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Lesson For Gamers: What Is RNG?}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.makeuseof.com/tag/lesson-gamers-rng
+      \endverb
+      \verb{url}
+      \verb https://www.makeuseof.com/tag/lesson-gamers-rng
+      \endverb
+    \endentry
+    \entry{website:brackeys-fade}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=871c36261666707c1a2cc02f81518dca}{%
+           family={Thirslund},
+           familyi={T\bibinitperiod},
+           given={Asbjørn},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{fullhash}{871c36261666707c1a2cc02f81518dca}
+      \strng{bibnamehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{authorbibnamehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{authornamehash}{871c36261666707c1a2cc02f81518dca}
+      \strng{authorfullhash}{871c36261666707c1a2cc02f81518dca}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How to make a Tower Defense Game (E24 FADING) - Unity Tutorial}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://youtu.be/C_Ok4xC_xVU
+      \endverb
+      \verb{url}
+      \verb https://youtu.be/C_Ok4xC_xVU
+      \endverb
+    \endentry
     \entry{website:brackeys-menu}{misc}{}
       \name{author}{1}{}{%
         {{hash=871c36261666707c1a2cc02f81518dca}{%
@@ -233,6 +287,56 @@
       \endverb
       \verb{url}
       \verb https://www.youtube.com/playlist?list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0
+      \endverb
+    \endentry
+    \entry{website:dishonored}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=104400e7d4632e6a82bf0b206b9c32dd}{%
+           family={Valve},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{fullhash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{bibnamehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{authorbibnamehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{authornamehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{authorfullhash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Steam - Dishonored}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://store.steampowered.com/app/570/Dota_2
+      \endverb
+      \verb{url}
+      \verb https://store.steampowered.com/app/570/Dota_2
+      \endverb
+    \endentry
+    \entry{website:dota}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=104400e7d4632e6a82bf0b206b9c32dd}{%
+           family={Valve},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{fullhash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{bibnamehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{authorbibnamehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{authornamehash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \strng{authorfullhash}{104400e7d4632e6a82bf0b206b9c32dd}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Steam - Dota 2}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://store.steampowered.com/app/217980/Dishonored
+      \endverb
+      \verb{url}
+      \verb https://store.steampowered.com/app/217980/Dishonored
       \endverb
     \endentry
     \entry{website:vs}{misc}{}
