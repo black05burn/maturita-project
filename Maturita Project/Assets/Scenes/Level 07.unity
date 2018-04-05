@@ -3355,12 +3355,12 @@ Prefab:
     - target: {fileID: 114079704085805928, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
         type: 2}
       propertyPath: nextLevel
-      value: Level 08
+      value: The End
       objectReference: {fileID: 0}
     - target: {fileID: 114079704085805928, guid: 0e4eaadbb07b8964b81b41e4fc31938b,
         type: 2}
       propertyPath: levelToUnlock
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e4eaadbb07b8964b81b41e4fc31938b, type: 2}
